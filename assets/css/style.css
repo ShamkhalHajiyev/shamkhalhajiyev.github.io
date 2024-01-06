@@ -1,66 +1,77 @@
-body, html {
+body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f5f5f5; /* Light theme background */
+    color: #333; /* Light theme text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
 }
 
 .container {
-    width: 100%;
     max-width: 800px;
     margin: auto;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header {
     text-align: center;
-    background-color: white;
-    border-radius: 5px;
-    overflow: hidden; /* This ensures that the border-radius applies to the children as well */
-}
-
-.navigation {
-    background: #333;
-    color: white;
-}
-
-.navigation ul {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-.navigation ul li {
-    padding: 10px 20px;
-}
-
-.navigation ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
+    padding-bottom: 20px;
 }
 
 .profile-picture {
-    max-width: 150px; /* Adjust this to make your image smaller or larger */
+    width: 200px; /* Adjust as needed */
     height: auto;
     border-radius: 50%;
     margin: 20px auto;
 }
 
-footer {
-    background-color: #f5f5f5;
-    padding: 20px;
+.bio, .social-links {
+    text-align: center;
 }
 
 .social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 20px;
 }
 
 .social-links a {
-    color: #333;
     margin: 0 10px;
-    font-size: 24px;
+    color: inherit; /* Inherits color from body */
+    font-size: 24px; /* Size of social icons */
 }
 
-.social-links a:hover {
-    color: #0077b5; /* LinkedIn color */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #eaeaea;
+}
+
+/* Dark theme styles */
+body.dark-mode {
+    background-color: #333; /* Dark theme background */
+    color: #f5f5f5; /* Dark theme text */
+}
+
+body.dark-mode a {
+    color: #f5f5f5; /* Dark theme link color */
+}
+
+/* Theme toggle button style */
+#theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #eee;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none; /* Removes the outline on focus for a clean look */
+}
+
+body.dark-mode #theme-toggle {
+    background: #222;
+    color: #ddd;
 }
