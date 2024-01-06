@@ -17,9 +17,6 @@ body, html {
     background-color: white;
 }
 
-.social-links a {
-    margin: 0 10px;
-}
 
 .profile-picture {
     max-width: 100%; /* Ensures image is not bigger than the container */
@@ -39,4 +36,22 @@ body, html {
 .links a {
     font-weight: bold;
     color: #1a0dab;
+}
+
+.social-links {
+    /* Centering the links if you want */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: #333; /* Icon color */
+    margin: 0 10px;
+    font-size: 24px; /* Icon size */
+    display: inline-block;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-links a:hover {
+    color: #0e76a8; /* LinkedIn color, change as needed */
 }
