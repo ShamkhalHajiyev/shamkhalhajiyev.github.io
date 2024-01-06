@@ -29,6 +29,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+.profile-picture {
+    max-width: 150px; /* Adjust this to make your image smaller or larger */
+    height: auto;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
 body {
 	line-height: 1;
 }
