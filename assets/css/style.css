@@ -1,9 +1,19 @@
+:root {
+    --color-bg: #ffffff;
+    --color-fg: #000000;
+}
+
+[data-theme="dark"] {
+    --color-bg: #000000;
+    --color-fg: #ffffff;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Light theme background */
-    color: #333; /* Light theme text */
+    background-color: var(--color-bg);
+    color: var(--color-fg);
     transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
 }
 
@@ -48,16 +58,16 @@ footer {
 
 /* Dark theme styles */
 body.dark-mode {
-    background-color: #333; /* Dark theme background */
-    color: #f5f5f5; /* Dark theme text */
+    background-color: var(--color-bg); /* Dark theme background */
+    color: var(--color-fg); /* Dark theme text */
 }
 
 body.dark-mode a {
-    color: #f5f5f5; /* Dark theme link color */
+    color: var(--color-fg); /* Dark theme link color */
 }
 
 /* Theme toggle button style */
-#theme-toggle {
+#dark-mode-toggle-1 {
     position: fixed;
     top: 10px;
     right: 10px;
@@ -71,7 +81,7 @@ body.dark-mode a {
     outline: none; /* Removes the outline on focus for a clean look */
 }
 
-body.dark-mode #theme-toggle {
+body.dark-mode #dark-mode-toggle-1 {
     background: #222;
     color: #ddd;
 }
