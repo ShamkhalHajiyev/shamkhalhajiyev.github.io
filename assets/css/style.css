@@ -48,3 +48,10 @@ main {
     color: #1a0dab;
     margin: 0 10px;
 }
+.profile-picture {
+    width: 150px; /* or any other dimensions */
+    height: auto;
+    border-radius: 50%; /* makes the image round */
+    display: block;
+    margin: 20px auto; /* centers the image */
+}
