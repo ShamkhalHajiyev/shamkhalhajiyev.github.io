@@ -1,57 +1,66 @@
 body, html {
-    height: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
     font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
 }
 
 .container {
     width: 100%;
-    max-width: 800px; /* Adjust the max-width as needed */
+    max-width: 800px;
+    margin: auto;
     text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
     background-color: white;
+    border-radius: 5px;
+    overflow: hidden; /* This ensures that the border-radius applies to the children as well */
 }
 
+.navigation {
+    background: #333;
+    color: white;
+}
+
+.navigation ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation ul li {
+    padding: 10px 20px;
+}
+
+.navigation ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
 
 .profile-picture {
-    max-width: 100%; /* Ensures image is not bigger than the container */
+    max-width: 150px; /* Adjust this to make your image smaller or larger */
     height: auto;
-    max-height: 300px; /* Adjust max-height to make the image smaller as needed */
-    width: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circular image */
-    margin-top: 20px;
+    border-radius: 50%;
+    margin: 20px auto;
 }
 
-.bio p, .links a {
-    line-height: 1.6;
-    display: block; /* Makes each link appear on a new line */
-    margin-top: 10px;
-}
-
-.links a {
-    font-weight: bold;
-    color: #1a0dab;
+footer {
+    background-color: #f5f5f5;
+    padding: 20px;
 }
 
 .social-links {
-    /* Centering the links if you want */
-    text-align: center;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-links a {
-    color: #333; /* Icon color */
+    color: #333;
     margin: 0 10px;
-    font-size: 24px; /* Icon size */
-    display: inline-block;
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 24px;
 }
 
 .social-links a:hover {
-    color: #0e76a8; /* LinkedIn color, change as needed */
+    color: #0077b5; /* LinkedIn color */
 }
