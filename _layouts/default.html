@@ -9,42 +9,39 @@
 </head>
 <body>
     <div class="container">
-        <nav class="navigation">
-            <ul>
-                <li><a href="/_layouts/default.html">Profile</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-        </nav>
-        <header id="profile">
+        <header>
+            <button id="theme-toggle">Toggle Theme</button>
             <img src="/assets/img/ProfilePhoto.jpg" alt="Shamkhal Hajiyev" class="profile-picture">
             <h1>Shamkhal Hajiyev</h1>
             <p>Welcome to my personal webpage!</p>
         </header>
         <main>
-            <!-- Profile content -->
             <section class="bio">
-                <p>I am proficient and adaptable Data Scientist with expertise in Machine Learning, Deep Learning, and Econometrics. 
-                    I possess a mastery of cloud services and cutting-edge programming languages, facilitating seamless multitasking across projects. 
-                    Recognized for my rapid learning ability and exceptional teamwork, 
-                    I excel in navigating intricate environments and driving successful outcomes with ease and precision.</p>
+                <!-- Your bio information here -->
             </section>
-            <!-- Projects content -->
-            <section id="projects">
-                <h2>Projects</h2>
-                <!-- Add your projects here -->
-            </section>
+            <!-- Other sections for content -->
         </main>
         <footer>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/yourusername" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <!-- Add other social links here -->
+                <!-- Social links here -->
             </div>
         </footer>
     </div>
+    <script>
+        // JavaScript for theme toggle
+        var themeToggleButton = document.getElementById('theme-toggle');
+        var currentTheme = localStorage.getItem('theme');
+
+        if(currentTheme) {
+            document.body.classList.add(currentTheme);
+        }
+
+        themeToggleButton.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+
+            var theme = document.body.classList.contains('dark-mode') ? 'dark-mode' : '';
+            localStorage.setItem('theme', theme);
+        });
+    </script>
 </body>
 </html>
