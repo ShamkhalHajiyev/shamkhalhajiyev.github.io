@@ -1,90 +1,72 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Shamkhal Hajiyev - CV</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/style.css"/>
-        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    </head>
-<body class="is-preload">
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-        <!-- Intro -->
-            <div id="intro">
-                <h1>
-                Shamkhal Hajiyev
-                </h1>
-                <p><b><font size=5px>Data Scientist</font></b><br>A highly skilled and adaptable Data Scientist, with a strong background in Machine Learning, Deep Learning, Econometrics, and proficiency in cloud services and programming languages, known for rapid learning ability, teamwork, and capability to drive successful outcomes in complex environments.</p>
-            </div>
-
-        <!-- Nav -->
-            <nav id="nav">
-                <ul class="links">
-                    <li><a href="index.html">About Me</a></li>
-                    <li class="active"><a href="cv.html">CV</a></li>
-		    <li><a href="test.html">Test</a></li>
-                    <!--<li><a href="projects.html">Projects</a></li>-->
-                </ul>
-                <ul class="icons">
-                    <li><a href="https://www.linkedin.com/in/shamkhalhajiyev/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://github.com/shamkhalhajiyev" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                </ul>
-            </nav>
-
-        <!-- Main Content -->
-        <div id="main">
-            <!-- Work Experience -->
-            <section class="post">
-                <h2><i class="fa fa-briefcase" aria-hidden="true"></i> WORK EXPERIENCE</h2>
-                <!-- Most Recent Job -->
-                <h3>Data Science Specialist @ Align Technology | Wroclaw, Poland | Jan 2023-Present </h3>
-		<ul>
-			<li>Developed multiple Time Series Forecasting models to predict sales, enhancing business decision-making through data-driven sales predictions.</li>
-		        <li>Employed advanced analytical techniques to gain deep insights into product cannibalization dynamics, enabling strategic pricing and product positioning adjustments.</li>
-		        <li>Leveraged clustering algorithms to proficiently identify and target potential customers for newly launched products, improving product launch success rates.</li>
-		        <li>Utilized machine learning methodologies to create classification and clustering models for comprehensive churn analysis, enabling the development of proactive customer retention strategies to reduce churn and enhance customer loyalty.</li>
-		</ul>
-                <!-- Previous Job -->
-                <h3>Data Scientist @ CRISIL Global Research & Risk Solutions | Wroclaw, Poland | Apr 2021-Dec 2022 </h3>
-		<ul>
-			<li>Updating and maintaining MySQL Server database.</li>
-		        <li>Using Python (Dash, Plotly, Flask, etc. libraries), Docker, and MySQL for creating user interactive multi-functional dashboard.</li>
-		        <li>Updated database in a monthly period by using Python (Luigi, Pandas, Numpy, etc. libraries) and ETLs.</li>
-		        <li>Applied Statistical Analysis, and various Machine Learning models to predict portfolio excess returns.</li>
-		</ul>
-            </section>
-
-            <!-- Education -->
-            <section class="post">
-                <h2>Education</h2>
-                <h3>Master of Arts in Data Science and Business Analytics | University of Warsaw | 2019-2021</h3>
-                <p>Algorithms & Data Structures | Econometrics | R Programming | Python | Statistics | Machine Learning</p>
-                <h3>Bachelor of Science in Economics | ADA University | 2014-2019</h3>
-                <p>Economics | Econometrics | Statistics.</p>
-            </section>
-
-            <!-- Languages and Tools -->
-            <section class="post">
-                <h2>Languages and Tools</h2>
-                <p>Python, R, SQL, Azure/Azure ML, Azure Databricks, GIT, Docker, ETL/ELT, Data Visualization, MySQL Server, Machine Learning, Econometrics, Statistics, Data Structures.</p>
-            </section>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shamkhal Hajiyev - Work Experience</title>
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .experience {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Updated this line */
+            margin: 20px;
+        }
+        .dates {
+            margin-right: 20px;
+            text-align: right;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .dates::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            width: 1px;
+            height: 40px;
+            background-color: #000;
+            transform: translateY(-50%);
+        }
+        .title {
+            padding: 0 20px;
+            /* Removed border style */
+        }
+        .location {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+        /* FontAwesome icon before the location text */
+        .location i {
+            color: #000;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="experience">
+        <div class="dates">
+            <span>Present</span>
+            <span>Jan 2023</span>
         </div>
-        <!-- End Main -->
-
+        <div class="title">
+            <h2>Data Science Specialist</h2>
+            <p>Align Technology</p>
+        </div>
+        <!-- Location with FontAwesome icon aligned to the right -->
+        <div class="location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Wroclaw, Poland</span>
+        </div>
     </div>
-    <!-- End Wrapper -->
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
 </body>
 </html>
