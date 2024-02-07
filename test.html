@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shamkhal Hajiyev - Work Experience</title>
+    <!-- Include FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -13,7 +15,7 @@
         .experience {
             display: flex;
             align-items: center;
-            justify-content: start;
+            justify-content: space-between; /* Updated this line */
             margin: 20px;
         }
         .dates {
@@ -30,23 +32,22 @@
             top: 50%;
             right: -10px;
             width: 1px;
-            height: 40px; /* Adjust height as needed */
+            height: 40px;
             background-color: #000;
             transform: translateY(-50%);
         }
         .title {
             padding: 0 20px;
-            border-right: 1px solid #000;
+            /* Removed border style */
         }
         .location {
-            margin-left: 20px;
             font-size: 16px;
             display: flex;
             align-items: center;
         }
-        .location::before {
-            content: '\1F4CD'; /* Unicode for the round pushpin, used as a placeholder for the icon */
-            font-size: 24px;
+        /* FontAwesome icon before the location text */
+        .location i {
+            color: #000;
             margin-right: 8px;
         }
     </style>
@@ -55,15 +56,15 @@
     <div class="experience">
         <div class="dates">
             <span>Present</span>
-            <!-- Vertical line to separate dates and title/position -->
             <span>Jan 2023</span>
         </div>
         <div class="title">
             <h2>Data Science Specialist</h2>
             <p>Align Technology</p>
         </div>
+        <!-- Location with FontAwesome icon aligned to the right -->
         <div class="location">
-            <!-- Location text with icon before it -->
+            <i class="fas fa-map-marker-alt"></i>
             <span>Wroclaw, Poland</span>
         </div>
     </div>
