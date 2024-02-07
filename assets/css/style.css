@@ -123,18 +123,6 @@ input, select, textarea {
 	appearance: none;
 }
 
-#intro {
-    color: #000000; /* Black color for text */
-}
-
-#intro h1 {
-    color: #000000; /* Ensures the heading is black */
-}
-
-#intro p, #intro p b {
-    color: #000000; /* Ensures paragraph text and bold text are black */
-}
-
 /* Basic */
 
 	@-ms-viewport {
