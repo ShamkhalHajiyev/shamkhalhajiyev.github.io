@@ -29,6 +29,47 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.experience {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+.dates {
+    margin-right: 20px;
+    text-align: right;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.dates::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: 1px;
+    height: 40px;
+    background-color: #000;
+    transform: translateY(-50%);
+}
+.title {
+    padding: 0 20px;
+}
+.location {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+.location i {
+    color: #000;
+    margin-right: 8px;
+}
 
 body {
 	line-height: 1;
