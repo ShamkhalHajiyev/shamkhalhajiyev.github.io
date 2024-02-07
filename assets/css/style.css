@@ -28,7 +28,6 @@ section, summary, time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
-
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -37,7 +36,7 @@ body {
 .experience {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     margin: 20px;
 }
 .dates {
@@ -60,15 +59,25 @@ body {
 }
 .title {
     padding: 0 20px;
+    border-right: 1px solid #000;
 }
 .location {
+    margin-left: 20px;
     font-size: 16px;
     display: flex;
     align-items: center;
 }
+/* FontAwesome icon before the location text */
 .location i {
     color: #000;
     margin-right: 8px;
+}
+/* Adjust icon position */
+.arrow-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 body {
