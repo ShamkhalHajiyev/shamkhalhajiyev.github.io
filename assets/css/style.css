@@ -36,10 +36,11 @@ body {
 .experience {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     margin: 20px;
 }
 .dates {
+    order: 1;
     margin-right: 20px;
     text-align: right;
     position: relative;
@@ -47,7 +48,7 @@ body {
     flex-direction: column;
     justify-content: center;
 }
-.dates::after {
+.dates::after, .title::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -58,11 +59,15 @@ body {
     transform: translateY(-50%);
 }
 .title {
+    order: 2;
     padding: 0 20px;
     border-right: 1px solid #000;
+    flex-grow: 1;
+    text-align: center;
 }
 .location {
-    margin-left: 20px;
+    order: 3;
+    margin-left: auto; /* Aligns the location to the right */
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -79,6 +84,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.title h5 {
+    font-weight: bold; /* Ensures the job title is bold */
+}
+.title h4 {
+    font-weight: normal; /* Ensures the company name is non-bold */
+    font-style: italic; /* Ensures the company name is italic */
+}
+
 
 body {
 	line-height: 1;
