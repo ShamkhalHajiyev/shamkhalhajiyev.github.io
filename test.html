@@ -10,52 +10,62 @@
             margin: 0;
             padding: 0;
         }
-        .experience-section {
+        .experience {
             display: flex;
             align-items: center;
-            font-size: 20px;
+            justify-content: start;
             margin: 20px;
         }
-        .experience-section .dates {
+        .dates {
             margin-right: 20px;
             text-align: right;
-            flex-basis: 20%;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        .experience-section .dates::after {
+        .dates::after {
             content: '';
             position: absolute;
-            right: -10px;
             top: 50%;
+            right: -10px;
+            width: 1px;
+            height: 40px; /* Adjust height as needed */
+            background-color: #000;
             transform: translateY(-50%);
-            width: 20px;
-            height: 1px;
-            background-color: #000;
         }
-        .experience-section .title {
-            flex-grow: 2;
-            padding-left: 20px; /* To ensure the title aligns with the after pseudo-element of dates */
+        .title {
+            padding: 0 20px;
+            border-right: 1px solid #000;
         }
-        .experience-section .location {
-            background-color: #000;
-            color: #fff;
-            border-radius: 50%;
-            padding: 0 10px;
+        .location {
             margin-left: 20px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+        .location::before {
+            content: '\1F4CD'; /* Unicode for the round pushpin, used as a placeholder for the icon */
+            font-size: 24px;
+            margin-right: 8px;
         }
     </style>
 </head>
 <body>
-    <div class="experience-section">
+    <div class="experience">
         <div class="dates">
-            <div>Present</div>
-            <div>Jan 2023</div>
+            <span>Present</span>
+            <!-- Vertical line to separate dates and title/position -->
+            <span>Jan 2023</span>
         </div>
         <div class="title">
-            <div>Data Science Specialist</div>
-            <div>Align Technology</div>
+            <h2>Data Science Specialist</h2>
+            <p>Align Technology</p>
         </div>
-        <div class="location">Wroclaw, Poland</div>
+        <div class="location">
+            <!-- Location text with icon before it -->
+            <span>Wroclaw, Poland</span>
+        </div>
     </div>
 </body>
 </html>
