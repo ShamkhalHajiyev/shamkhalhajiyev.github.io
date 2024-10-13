@@ -1,1 +1,0 @@
-# shamkhalhajiyev.github.io
