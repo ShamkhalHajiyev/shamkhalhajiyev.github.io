@@ -1,0 +1,75 @@
+/* Skills section styling */
+.skills-container {
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+/* Skill group titles */
+.skills-title {
+    font-size: 1.4rem;
+    color: #f1f1f1;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Skill item styling */
+.skill-item {
+    position: relative;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-item:hover {
+    transform: scale(1.05);
+}
+
+/* Skill item icons */
+.skill-item i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* If you have two icons in one skill-item (like HTML & CSS) */
+.skill-item i + i {
+    margin-left: 0.5rem;
+}
+
+/* Tooltip styling */
+.skill-item[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #555;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    white-space: normal;
+    width: 200px;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.skill-item[data-tooltip]:hover::after {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-title {
+        font-size: 1.2rem;
+    }
+
+    .skill-item {
+        font-size: 0.9rem;
+    }
+}

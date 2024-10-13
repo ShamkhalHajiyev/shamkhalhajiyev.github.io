@@ -1,0 +1,104 @@
+/* General dark mode for the body */
+body {
+    background-color: #121212; /* Dark background */
+    color: #f1f1f1; /* Light text */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Header styling */
+header {
+    background-color: #1f1f1f; /* Darker header */
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #0dcaf0; /* Bootstrap Primary */
+}
+
+/* Navbar (using Bootstrap) */
+.navbar-dark .navbar-brand {
+    color: #0dcaf0; /* Highlighted brand name */
+}
+
+.navbar-dark .nav-link {
+    color: #f1f1f1;
+    transition: color 0.3s;
+}
+
+.navbar-dark .nav-link:hover {
+    color: #0dcaf0;
+}
+
+/* Footer styling */
+footer {
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #2e2e2e; /* Subtle line to separate content */
+}
+
+/* GitHub and LinkedIn Icons styling */
+footer .text-light a {
+    color: #f1f1f1;
+    transition: color 0.3s ease;
+}
+
+footer .text-light a:hover {
+    color: #0dcaf0; /* Hover effect for icons */
+}
+
+/* Special background color for dark mode (header & footer) */
+.bg-special {
+    background-color: #1c1c1c; /* Dark gray that suits dark mode */
+    color: #f1f1f1; /* Light text for readability */
+}
+
+/* Bootstrap dark mode adjustments */
+.bg-dark {
+    background-color: #212529 !important;
+}
+
+.text-light {
+    color: #f8f9fa !important;
+}
+
+/* Responsive adjustment for navbar links in mobile view */
+.navbar-toggler {
+    background-color: #0dcaf0;
+}
+
+.navbar-toggler-icon {
+    background-color: #0dcaf0;
+}
+
+/* Customize links in the footer and header for smooth hover effects */
+.text-light a {
+    color: #f1f1f1;
+    transition: color 0.3s ease;
+}
+
+.text-light a:hover {
+    color: #0dcaf0; /* Change color on hover */
+}
