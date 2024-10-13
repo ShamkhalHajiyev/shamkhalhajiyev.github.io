@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,8 @@
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body class="bg-dark text-light">
+
+<body>
 
   <!-- Header placeholder -->
   <div id="header-placeholder"></div>
@@ -20,32 +22,104 @@
   <!-- Main Content (CV Section) -->
   <main class="container my-5">
     <section>
-      <h1>Curriculum Vitae</h1>
-      <p>Here is an overview of my professional experience and education:</p>
+      <h1 class="cv-title text-center">
+        <a href="../assets/pdf/ShamkhalHajiyev_CV.pdf" download="ShamkhalHajiyev_CV.pdf">
+          <i class="fas fa-file-alt cv-icon"></i> Curriculum Vitae
+        </a>
+      </h1>
+
+      <!-- Contact Information -->
+      <div class="d-flex justify-content-center mb-4">
+        <div class="contact-item me-4">
+          <p><i class="fas fa-envelope cv-icon"></i> <strong>Email:</strong> hajiyev.shamkhal@gmail.com</p>
+        </div>
+        <div class="contact-item me-4">
+          <p><i class="fas fa-phone cv-icon"></i> <strong>Phone:</strong> +48576086031</p>
+        </div>
+        <div class="contact-item me-4">
+          <p><i class="fas fa-map-marker-alt cv-icon"></i> <strong>Location:</strong> Wroclaw, Poland</p>
+        </div>
+        <div class="contact-item me-4">
+          <a href="https://linkedin.com/in/shamkhalhajiyev" target="_blank">
+            <i class="fab fa-linkedin fa-3x cv-icon"></i>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="https://github.com/shamkhalhajiyev" target="_blank">
+            <i class="fab fa-github fa-3x cv-icon"></i>
+          </a>
+        </div>
+      </div>
 
       <!-- Work Experience Section -->
-      <h2>Work Experience</h2>
-      <ul>
-        <li><strong>Senior Data Scientist - Align Technology</strong> (Date - Present)</li>
-        <li><strong>Machine Learning Engineer - Previous Company</strong> (Date - Date)</li>
-        <!-- Add more experiences -->
+      <h2><i class="fas fa-briefcase cv-icon"></i> Work Experience</h2>
+      <ul class="list-unstyled">
+        <li class="mb-4">
+          <strong>Data Science Specialist - Align Technology</strong> (Jan 2023 – Present, Wroclaw, Poland)
+          <ul>
+            <li>Developed an Azure-based churn classification model, integrated with PowerBI, reducing customer attrition by 15%.</li>
+            <li>Built Python-based sales forecasting models that updated PowerBI via REST API in real-time.</li>
+            <li>Enhanced analytics by integrating LLMs (Large Language Models) into PowerBI, enabling natural language queries and automated insights.</li>
+          </ul>
+        </li>
+        <li class="mb-4">
+          <strong>Data Scientist - CRISIL Global Research & Risk Solutions</strong> (Apr 2021 – Dec 2022, Wroclaw, Poland)
+          <ul>
+            <li>Developed and deployed a Dash app using Python, Docker, and MySQL to calculate portfolio risk rates.</li>
+            <li>Led monthly updates and maintenance of MySQL database, optimizing ETL processes using Python (Luigi, Pandas, Numpy).</li>
+            <li>Collaborated on predictive models for financial risk assessment, providing key insights for investment strategies.</li>
+          </ul>
+        </li>
       </ul>
 
       <!-- Education Section -->
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Master's Degree in Data Science - University Name</strong></li>
-        <li><strong>Bachelor's Degree in Computer Science - University Name</strong></li>
-        <!-- Add more education details -->
+      <h2><i class="fas fa-graduation-cap cv-icon"></i> Education</h2>
+      <ul class="list-unstyled">
+        <li class="mb-4">
+          <strong>Ph.D. in Computer Science and Mathematics (Incomplete)</strong> - University of Wroclaw (Oct 2021 – Sep 2023, Wroclaw, Poland)
+          <ul>
+            <li>Relevant Courses: Machine Learning, Deep Learning, NLP, Optimization</li>
+          </ul>
+        </li>
+        <li class="mb-4">
+          <strong>Master of Arts in Data Science and Business Analytics</strong> - University of Warsaw (Oct 2019 – Jul 2021, Warsaw, Poland)
+          <ul>
+            <li>Relevant Courses: Algorithms & Data Structures, Python, R Programming, Big Data, Databases</li>
+          </ul>
+        </li>
+        <li class="mb-4">
+          <strong>Bachelor of Science in Economics</strong> - ADA University (Sep 2014 – Jul 2019, Baku, Azerbaijan)
+          <ul>
+            <li>Relevant Courses: Economics, Statistics, Econometrics, Game Theory, Decision Systems</li>
+          </ul>
+        </li>
       </ul>
 
-      <!-- Skills Section (Optional) -->
-      <h2>Skills</h2>
-      <ul>
-        <li>Data Science</li>
-        <li>Machine Learning</li>
-        <li>Python, SQL, Azure</li>
-        <!-- Add more skills -->
+      <!-- Skills Section -->
+      <h2><i class="fas fa-tools cv-icon"></i> Skills</h2>
+      <ul class="list-unstyled">
+        <li>Programming Languages: Python (Pandas, Polars, Numpy, TensorFlow), SQL, R</li>
+        <li>Machine Learning & AI: Deep Learning, NLP, LLMs, Time Series Forecasting</li>
+        <li>Big Data: PySpark, Hadoop, Azure ML, Azure Databricks</li>
+        <li>Project Management: Agile Methodologies, JIRA, Confluence, Asana</li>
+      </ul>
+
+      <!-- Certifications Section -->
+      <h2><i class="fas fa-certificate cv-icon"></i> Certifications</h2>
+      <ul class="list-unstyled">
+        <li>Microsoft Certified: Azure Data Scientist Associate (DP-100)</li>
+        <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+        <li>Microsoft Certified: Azure Data Fundamentals (DP-900)</li>
+        <li>Microsoft Certified: Azure AI Fundamentals (AI-900)</li>
+      </ul>
+
+      <!-- Languages Section -->
+      <h2><i class="fas fa-language cv-icon"></i> Languages</h2>
+      <ul class="list-unstyled">
+        <li>English (Fluent)</li>
+        <li>Azerbaijani (Native)</li>
+        <li>Turkish (Fluent)</li>
+        <li>German (Basic - Learning)</li>
       </ul>
     </section>
   </main>
@@ -57,4 +131,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/loadHeaderFooter.js"></script>
 </body>
+
 </html>

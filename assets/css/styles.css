@@ -1,21 +1,45 @@
-/* General dark mode for the body */
+/* General Dark Mode for the body */
 body {
-    background-color: #121212; /* Dark background */
-    color: #f1f1f1; /* Light text */
+    background-color: #121212;
+    color: #f1f1f1;
+    font-family: 'Helvetica', sans-serif;
     transition: all 0.3s ease-in-out;
+    margin: 0;
 }
 
-/* Header styling */
+/* Global Layout (Container) */
+main.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1200px;
+}
+
+/* Header Styling */
 header {
-    background-color: #1f1f1f; /* Darker header */
+    background-color: #1f1f1f;
     color: white;
     padding: 1rem;
 }
 
+/* Navbar */
+.navbar {
+    background-color: transparent !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.navbar-brand:hover {
+    color: #0dcaf0;
+}
+
+/* Navbar links */
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
 }
@@ -30,75 +54,77 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #0dcaf0; /* Bootstrap Primary */
-}
-
-/* Navbar (using Bootstrap) */
-.navbar-dark .navbar-brand {
-    color: #0dcaf0; /* Highlighted brand name */
-}
-
-.navbar-dark .nav-link {
-    color: #f1f1f1;
-    transition: color 0.3s;
-}
-
-.navbar-dark .nav-link:hover {
     color: #0dcaf0;
 }
 
-/* Footer styling */
+/* Footer Styling */
 footer {
     background-color: #1f1f1f;
     color: #f1f1f1;
-    text-align: center;
     padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #2e2e2e; /* Subtle line to separate content */
+    border-top: 1px solid #2e2e2e;
+    text-align: center;
 }
 
-/* GitHub and LinkedIn Icons styling */
+/* GitHub and LinkedIn Icons Styling */
 footer .text-light a {
     color: #f1f1f1;
     transition: color 0.3s ease;
 }
 
 footer .text-light a:hover {
-    color: #0dcaf0; /* Hover effect for icons */
+    color: #0dcaf0;
 }
 
-/* Special background color for dark mode (header & footer) */
-.bg-special {
-    background-color: #1c1c1c; /* Dark gray that suits dark mode */
-    color: #f1f1f1; /* Light text for readability */
+/* Image Pop-Up Modal Styles */
+.image-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Bootstrap dark mode adjustments */
-.bg-dark {
-    background-color: #212529 !important;
+.image-modal {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    margin-top: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
 }
 
-.text-light {
-    color: #f8f9fa !important;
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
 }
 
-/* Responsive adjustment for navbar links in mobile view */
-.navbar-toggler {
-    background-color: #0dcaf0;
+.close-btn:hover {
+    color: #0dcaf0;
 }
 
-.navbar-toggler-icon {
-    background-color: #0dcaf0;
+.image-modal, .image-overlay {
+    transition: 0.3s;
 }
 
-/* Customize links in the footer and header for smooth hover effects */
-.text-light a {
-    color: #f1f1f1;
-    transition: color 0.3s ease;
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    .image-modal {
+        width: 100%;
+    }
 }
 
-.text-light a:hover {
-    color: #0dcaf0; /* Change color on hover */
+@media only screen and (max-width: 768px) {
+    main.container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }

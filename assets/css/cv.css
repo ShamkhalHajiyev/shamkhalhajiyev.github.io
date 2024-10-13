@@ -1,0 +1,156 @@
+/* General Link Styling to override default blue */
+a, a:visited {
+    color: #f1f1f1 !important; /* Force links to white using !important */
+    text-decoration: none !important; /* Remove underline */
+}
+
+/* Hover effect for all links */
+a:hover {
+    color: #0dcaf0 !important; /* Force hover to blue */
+    text-decoration: none !important; /* Ensure no underline on hover */
+}
+
+/* CV Headings */
+h1, h2, h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* CV Main Title */
+h1.cv-title a {
+    font-size: 2.5rem;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for the CV title */
+h1.cv-title a:hover {
+    color: #0dcaf0 !important;
+}
+
+/* Tooltip styling for CV title */
+h1.cv-title a::after {
+    content: "Please click on Curriculum Vitae to download";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+/* Show tooltip on hover */
+h1.cv-title a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Section Icons and Headings */
+h2 {
+    font-size: 1.75rem;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+
+h2 i {
+    margin-right: 10px;
+    color: #0dcaf0; /* Icon color */
+}
+
+/* CV Work Experience and Education */
+h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Body Text */
+p, ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d1d1d1;
+}
+
+/* Bullet Points in Lists */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li::before {
+    content: "• ";
+    color: #0dcaf0;
+    font-weight: bold;
+}
+
+/* Contact Information */
+.text-center p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #f1f1f1;
+}
+
+.text-center p i {
+    margin-right: 8px;
+    color: #0dcaf0;
+}
+
+/* Button Styling */
+a.btn-primary {
+    background-color: #0dcaf0;
+    color: white !important; /* Ensure button text is white */
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a.btn-primary:hover {
+    background-color: #0bb1d4;
+    color: white !important; /* Keep text white on hover */
+}
+
+/* Icon Styling for CV */
+.cv-icon {
+    font-size: 1.25rem;
+    color: #f1f1f1;
+    transition: color 0.3s ease;
+}
+
+.cv-icon:hover {
+    color: #0dcaf0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p, ul {
+        font-size: 0.9rem;
+    }
+}
