@@ -8,23 +8,23 @@ Wroclaw, Poland
 
 ### About Me
 
-I am a highly motivated **Data Scientist and Machine Learning Engineer** with over **4 years of experience** in data science, machine learning, and business analytics. My passion lies in transforming complex datasets into actionable insights that drive business decisions and create impact. I have successfully worked across various industries, including finance, healthcare, and customer analytics.
+I am a results-driven **Data Scientist and Machine Learning Engineer** with over **4 years of professional experience** in data science, machine learning, and business analytics. My expertise lies in leveraging complex datasets to extract actionable insights that drive impactful business decisions. I have worked across diverse industries, including finance, healthcare, and customer analytics, and I am passionate about solving real-world problems through data.
 
 I specialize in:
 
-- **Predictive Modeling**: Machine Learning, Time Series Forecasting, and NLP.
+- **Predictive Modeling**: Machine Learning, Time Series Forecasting, and Natural Language Processing (NLP).
 - **Big Data Technologies**: PySpark, Hadoop, and Azure ML.
-- **Data Visualization**: PowerBI, Dash, Plotly, and other visualization tools.
-- **Cloud Solutions**: Expertise in **Azure**, especially **Azure Data Lake**, **Databricks**, and **REST APIs**.
-- **Collaboration and Agile**: Proven experience in working within agile teams, using tools like JIRA, Confluence, and Git for project management.
+- **Data Visualization**: Power BI, Dash, Plotly, and other visualization tools.
+- **Cloud Solutions**: Extensive experience with **Azure**, including **Azure Data Lake**, **Databricks**, and integrating REST APIs.
+- **Collaboration & Agile**: Proven track record of working effectively in agile teams, using tools like JIRA, Confluence, and Git for project management and version control.
 
 ---
 
 ### Skills
 
 - **Languages & Tools**: Python (Pandas, Polars, Numpy, PyTorch, TensorFlow), SQL, R, MySQL, NoSQL, Git, Bash, Docker.
-- **Machine Learning & AI**: Predictive Modeling, Deep Learning, NLP, Time Series Forecasting, A/B Testing, LLMs (GPT, BERT).
-- **Data Visualization**: PowerBI, Plotly, Dash, Seaborn, ggplot2.
+- **Machine Learning & AI**: Predictive Modeling, Deep Learning, NLP, Time Series Forecasting, A/B Testing, Large Language Models (LLMs like GPT, BERT).
+- **Data Visualization**: Power BI, Plotly, Dash, Seaborn, ggplot2.
 - **Big Data & Cloud**: PySpark, Hadoop, Azure ML, Azure Databricks.
 - **Project Management & Agile**: JIRA, Confluence, Asana, Mentoring, Problem-Solving.
 
@@ -32,23 +32,23 @@ I specialize in:
 
 ### Key Achievements
 
-- **Boosted Customer Retention**: Developed an Azure-based churn classification model, integrated with PowerBI, providing real-time insights to sales teams. This reduced customer attrition by 15%.
-- **Automated Sales Forecasting**: Built and deployed Python-based sales forecasting models, which updated PowerBI via REST API in real-time, optimizing business decisions and reducing manual reporting.
-- **Data Integration**: Created a custom Python framework to connect PowerBI with Azure Data Lake, enhancing analytics efficiency by improving data access and consistency across platforms.
+- **Customer Retention Enhancement**: Spearheaded the development of an Azure-based churn classification model integrated with Power BI, providing sales teams with real-time insights and reducing customer attrition by 15%.
+- **Sales Forecasting Automation**: Designed and implemented Python-based sales forecasting models that automatically updated Power BI dashboards via REST API, streamlining business decision-making and eliminating manual reporting.
+- **Efficient Data Integration**: Developed a custom Python framework to seamlessly connect Power BI with Azure Data Lake, improving analytics efficiency by enhancing data access and consistency across platforms.
 
 ---
 
-### Experience
+### Professional Experience
 
 - **Data Science Specialist**  
   Align Technology (Jan 2023 – Present)  
-  - Developed Azure-based customer churn models, automated forecasting, and integrated insights into PowerBI dashboards.
-  - Leveraged Polars, Python, and REST APIs for scalable KPI calculations and data processing.
+  - Designed and deployed customer churn models, automated sales forecasting, and integrated advanced analytics into Power BI dashboards.
+  - Optimized KPI calculations using Polars, Python, and REST APIs, scaling data processing and improving reporting accuracy.
 
 - **Data Scientist**  
   CRISIL Global Research & Risk Solutions (Apr 2021 – Dec 2022)  
-  - Built interactive financial analytics tools using Python, Docker, and MySQL.
-  - Enhanced ETL processes using Python libraries like Luigi and Pandas to optimize data pipelines.
+  - Developed financial risk assessment Dash/Flask application using Python, Docker, and MySQL, delivering interactive analytics solutions.
+  - Streamlined ETL processes by optimizing data pipelines using Python (Luigi, Pandas), improving data reliability and reducing processing time.
 
 ---
 
@@ -64,14 +64,13 @@ I specialize in:
 
 ### Certifications
 
-- **Microsoft Certified: Azure Data Scientist Associate** (DP-100)  
-- **Microsoft Certified: Azure Fundamentals** (AZ-900)  
-- **Microsoft Certified: Azure Data Fundamentals** (DP-900)  
-- **Microsoft Certified: Azure AI Fundamentals** (AI-900)
+- **Microsoft Certified: Azure Data Scientist Associate (DP-100)**  
+- **Microsoft Certified: Azure Fundamentals (AZ-900)**  
+- **Microsoft Certified: Azure Data Fundamentals (DP-900)**  
+- **Microsoft Certified: Azure AI Fundamentals (AI-900)**
 
 ---
 
-### Get in Touch
+### Let’s Connect
 
-I am always open to discussing new opportunities and collaborations. Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/shamkhalhajiyev) or explore my repositories on [GitHub](https://github.com/shamkhalhajiyev).
-****
+I’m always open to exploring new opportunities and collaborations. Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/shamkhalhajiyev) or take a look at my projects on [GitHub](https://github.com/shamkhalhajiyev).
