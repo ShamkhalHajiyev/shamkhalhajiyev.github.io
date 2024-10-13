@@ -47,7 +47,7 @@ I specialize in:
 
 - **Data Scientist**  
   CRISIL Global Research & Risk Solutions (Apr 2021 – Dec 2022)  
-  - Developed financial risk assessment tools using Python, Docker, and MySQL, delivering interactive analytics solutions.
+  - Developed financial risk assessment Dash/Flask application using Python, Docker, and MySQL, delivering interactive analytics solutions.
   - Streamlined ETL processes by optimizing data pipelines using Python (Luigi, Pandas), improving data reliability and reducing processing time.
 
 ---
