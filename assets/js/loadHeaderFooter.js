@@ -1,47 +1,40 @@
-// Function to load the header and footer dynamically
-function loadHeaderFooter() {
-  // Adjust path for the header and footer based on the current page
-  const pathPrefix = window.location.pathname.includes("/pages/") ? ".." : ".";
+// loadHeaderFooter.js
 
-  // Load header
-  fetch(`${pathPrefix}/partials/header.html`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Header fetch failed');
-      }
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-      highlightActiveTab(); // Highlight the active tab after loading header
-    })
-    .catch(error => console.error('Error loading header:', error));
+document.addEventListener('DOMContentLoaded', () => {
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    const footerPlaceholder = document.getElementById('footer-placeholder');
 
-  // Load footer
-  fetch(`${pathPrefix}/partials/footer.html`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Footer fetch failed');
-      }
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    })
-    .catch(error => console.error('Error loading footer:', error));
-}
+    // Function to load external HTML files
+    const loadHTML = (url, element) => {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                element.innerHTML = data;
+                if (element === headerPlaceholder) {
+                    highlightActiveTab();
+                }
+            })
+            .catch(error => console.error(`Error loading ${url}:`, error));
+    };
 
-// Function to highlight the active tab
-function highlightActiveTab() {
-  const currentPage = window.location.pathname.split("/").pop();
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-  navLinks.forEach(link => {
-    // Check if the href of the link matches the current page
-    if (link.getAttribute('href').includes(currentPage)) {
-      link.classList.add('active');
-    }
-  });
-}
+    // Determine the path prefix based on the current location
+    const pathPrefix = window.location.pathname.includes('/pages/') ? '..' : '.';
 
-// Event listener to ensure DOM is fully loaded before loading header and footer
-document.addEventListener('DOMContentLoaded', loadHeaderFooter);
+    // Load Header and Footer
+    loadHTML(`${pathPrefix}/partials/header.html`, headerPlaceholder);
+    loadHTML(`${pathPrefix}/partials/footer.html`, footerPlaceholder);
+
+    // Function to highlight the active tab
+    const highlightActiveTab = () => {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href').split('/').pop();
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    };
+});

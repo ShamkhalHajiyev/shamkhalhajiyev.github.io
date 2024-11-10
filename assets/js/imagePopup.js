@@ -1,21 +1,24 @@
-// Get elements
-var modal = document.getElementById("imageOverlay");
-var img = document.getElementById("profilePic");
-var closeBtn = document.getElementById("closeBtn");
+// imagePopup.js
 
-// Open the modal when the image is clicked
-img.onclick = function() {
-  modal.style.display = "block";
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('imageOverlay');
+    const img = document.getElementById('profilePic');
+    const closeBtn = document.getElementById('closeBtn');
 
-// Close the modal when the close button is clicked
-closeBtn.onclick = function() {
-  modal.style.display = "none";
-}
+    // Open the modal when the image is clicked
+    img.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
 
-// Close the modal if user clicks outside the image
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+    // Close the modal when the close button is clicked
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Close the modal if user clicks outside the image
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});

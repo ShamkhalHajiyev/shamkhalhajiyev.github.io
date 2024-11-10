@@ -1,74 +1,79 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Shamkhal Hajiyev</title>
-  <!-- Bootstrap 5 CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-  <!-- General Styles (for Header, Footer, Dark Mode) -->
-  <link rel="stylesheet" href="../assets/css/styles.css">
-  <!-- Specific Styles for About Me Page -->
-  <link rel="stylesheet" href="../assets/css/index.css">
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="description" content="About Me - Shamkhal Hajiyev, Data Scientist specializing in Machine Learning and Customer Analytics.">
+    <meta name="keywords" content="Shamkhal Hajiyev, Data Scientist, Machine Learning, AI, Analytics">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Shamkhal Hajiyev</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header Placeholder (Loaded Dynamically) -->
-  <div id="header-placeholder"></div>
+    <!-- Header Placeholder (Loaded Dynamically) -->
+    <div id="header-placeholder"></div>
 
-  <!-- Main Content -->
-  <main class="container my-5">
-    <section class="row align-items-center">
-      <!-- Left side: Profile Picture -->
-      <div class="col-md-4 text-center">
-        <img src="assets/img/pp.jpg" class="img-fluid rounded-circle" alt="Profile Picture" style="cursor: pointer;" id="profilePic">
-      </div>
+    <!-- Main Content -->
+    <main class="container my-5">
+        <section class="row align-items-center">
+            <!-- Left side: Profile Picture -->
+            <div class="col-md-4 col-sm-12 text-center mb-4">
+                <img src="assets/img/pp.jpg" class="img-fluid rounded-circle index-profile-pic" alt="Profile Picture" id="profilePic">
+            </div>
 
-      <!-- Right side: Career Objectives -->
-      <div class="col-md-8">
-        <!-- Right-Aligned Title and Name -->
-        <h1 style="text-align: right;">Shamkhal Hajiyev</h1>
-        <p class="lead" style="text-align: right;">Data Scientist | Machine Learning Engineer | Customer Analytics</p>
+            <!-- Right side: Career Objectives -->
+            <div class="col-md-8 col-sm-12">
+                <!-- Name and Title -->
+                <h1 class="text-end">Shamkhal Hajiyev</h1>
+                <p class="lead text-end">Data Scientist | Machine Learning Engineer | Customer Analytics</p>
 
-        <!-- Right-Aligned Section Title -->
-        <h2 style="text-align: right;">About Me</h2>
+                <!-- About Me Section -->
+                <h2 class="text-end">About Me</h2>
 
-        <!-- Centered and Justified Paragraphs -->
-        <p style="text-align: justify;">
-          With over <strong>4 years of experience</strong> in the fields of <strong>Data Science</strong>, <strong>Machine Learning</strong>, and <strong>Advanced Analytics</strong>,
-          I am passionate about transforming complex datasets into actionable business insights. My career has been dedicated to developing innovative solutions,
-          including <strong>predictive models</strong>, <strong>churn classification models</strong>, and <strong>automated sales forecasting systems</strong>,
-          aimed at driving measurable impact for organizations.
-        </p>
-        <p style="text-align: justify;">
-          As a <strong>Data Science Specialist</strong> at <strong>Align Technology</strong>, I lead a variety of high-impact projects, from creating real-time
-          sales forecasting models to developing frameworks for seamless integration between <strong>Azure</strong> and <strong>Power BI</strong>.
-          My work focuses on delivering advanced machine learning solutions to enhance customer retention and optimize sales strategies.
-        </p>
-        <p style="text-align: justify;">
-          I hold a <strong>Master of Arts in Data Science and Business Analytics</strong> from the <strong>University of Warsaw</strong>,
-          and my technical expertise spans across a range of programming languages and tools, including <strong>Python</strong>, <strong>SQL</strong>,
-          and cloud platforms like <strong>Azure Databricks</strong> and <strong>Azure Machine Learning</strong>. I thrive on challenges and am
-          constantly seeking opportunities to leverage data in innovative ways to solve business problems.
-        </p>
-      </div>
-    </section>
-  </main>
+                <!-- About Me Content -->
+                <p class="text-justify">
+                    With over <strong>4 years of experience</strong> in the fields of <strong>Data Science</strong>, <strong>Machine Learning</strong>, and <strong>Advanced Analytics</strong>,
+                    I am passionate about transforming complex datasets into actionable business insights. My career has been dedicated to developing innovative solutions,
+                    including <strong>predictive models</strong>, <strong>churn classification models</strong>, and <strong>automated sales forecasting systems</strong>,
+                    aimed at driving measurable impact for organizations.
+                </p>
+                <p class="text-justify">
+                    As a <strong>Data Science Specialist</strong> at <strong>Align Technology</strong>, I lead a variety of high-impact projects, from creating real-time
+                    sales forecasting models to developing frameworks for seamless integration between <strong>Azure</strong> and <strong>Power BI</strong>.
+                    My work focuses on delivering advanced machine learning solutions to enhance customer retention and optimize sales strategies.
+                </p>
+                <p class="text-justify">
+                    I hold a <strong>Master of Arts in Data Science and Business Analytics</strong> from the <strong>University of Warsaw</strong>,
+                    and my technical expertise spans across a range of programming languages and tools, including <strong>Python</strong>, <strong>SQL</strong>,
+                    and cloud platforms like <strong>Azure Databricks</strong> and <strong>Azure Machine Learning</strong>. I thrive on challenges and am
+                    constantly seeking opportunities to leverage data in innovative ways to solve business problems.
+                </p>
+            </div>
+        </section>
+    </main>
 
-  <!-- Image Pop-Up Modal -->
-  <div id="imageOverlay" class="image-overlay">
-    <span class="close-btn" id="closeBtn">&times;</span>
-    <img class="image-modal" id="imageInModal" src="assets/img/pp.jpg" alt="Profile Picture">
-  </div>
+    <!-- Image Pop-Up Modal -->
+    <div id="imageOverlay" class="image-overlay">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <img class="image-modal" id="imageInModal" src="assets/img/pp.jpg" alt="Profile Picture">
+    </div>
 
-  <!-- Footer Placeholder (Loaded Dynamically) -->
-  <div id="footer-placeholder"></div>
+    <!-- Footer Placeholder (Loaded Dynamically) -->
+    <div id="footer-placeholder"></div>
 
-  <!-- Link to the JavaScript file for the Image Pop-Up -->
-  <script src="../assets/js/imagePopup.js"></script>
-  <!-- Load Header and Footer -->
-  <script src="../assets/js/loadHeaderFooter.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/imagePopup.js" defer></script>
+    <script src="assets/js/loadHeaderFooter.js" defer></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
