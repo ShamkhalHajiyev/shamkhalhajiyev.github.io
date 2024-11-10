@@ -22,50 +22,78 @@
   <!-- Main Content (CV Section) -->
   <main class="container my-5">
     <section>
+      <!-- Title Section -->
       <h1 class="cv-title text-center">
-        <a href="../assets/pdf/ShamkhalHajiyev_CV.pdf" download="ShamkhalHajiyev_CV.pdf">
-          <i class="fas fa-file-alt cv-icon"></i> Curriculum Vitae
-        </a>
-      </h1>
+        <span>Shamkhal Hajiyev</span> <br>
+              </h1>
+      <h4 class="text-center">
+                <span class="cv-subtitle">Data Scientist in Business | Finance | Customer Analyst</span> <br>
+        <span class="cv-summary">Azure Certified Data Scientist with 4 years of experience in Business & Finance</span>
 
-      <!-- Contact Information -->
-      <div class="d-flex justify-content-center mb-4">
-        <div class="contact-item me-4">
-          <p><i class="fas fa-envelope cv-icon"></i> <strong>Email:</strong> hajiyev.shamkhal@gmail.com</p>
-        </div>
-        <div class="contact-item me-4">
-          <p><i class="fas fa-phone cv-icon"></i> <strong>Phone:</strong> +48576086031</p>
-        </div>
-        <div class="contact-item me-4">
-          <p><i class="fas fa-map-marker-alt cv-icon"></i> <strong>Location:</strong> Wroclaw, Poland</p>
-        </div>
-        <div class="contact-item me-4">
-          <a href="https://linkedin.com/in/shamkhalhajiyev" target="_blank">
-            <i class="fab fa-linkedin fa-3x cv-icon"></i>
-          </a>
-        </div>
-        <div class="contact-item">
-          <a href="https://github.com/shamkhalhajiyev" target="_blank">
-            <i class="fab fa-github fa-3x cv-icon"></i>
-          </a>
-        </div>
+      </h4>
+
+      <!-- Download CV Section -->
+      <div class="text-center mb-4">
+        <a href="../assets/pdf/ShamkhalHajiyev_CV.pdf" download="ShamkhalHajiyev_CV.pdf" class="btn btn-primary cv-download-button">
+          <i class="fas fa-download cv-icon"></i> Download My CV as PDF
+        </a>
       </div>
 
+    <!-- Contact Information -->
+    <div class="d-flex justify-content-center mb-3 flex-wrap">
+      <div class="contact-item me-3">
+        <p><i class="fas fa-envelope cv-icon"></i> <strong>Email:</strong> hajiyev.shamkhal@gmail.com</p>
+      </div>
+      <div class="contact-item me-3">
+        <p><i class="fas fa-phone cv-icon"></i> <strong>Phone:</strong> +48576086031</p>
+      </div>
+      <div class="contact-item me-3">
+        <p><i class="fas fa-map-marker-alt cv-icon"></i> <strong>Location:</strong> Wroclaw, Poland</p>
+      </div>
+    </div>
+
+    <!-- Social Media Links (Separate Line) -->
+<!-- Social Media Links (Same Line) -->
+<div class="d-flex justify-content-center mb-3">
+  <div class="contact-item me-3">
+    <a href="https://linkedin.com/in/shamkhalhajiyev" target="_blank">
+      <i class="fab fa-linkedin fa-2x cv-icon"></i> </a>
+  </div>
+  <div class="contact-item">
+    <a href="https://github.com/shamkhalhajiyev" target="_blank">
+      <i class="fab fa-github fa-2x cv-icon"></i> </a>
+  </div>
+</div>
+
+
+      <!-- Achievements Section -->
+    <h2><i class="fas fa-trophy cv-icon"></i> Achievements </h2>
+          <ul>
+            <li> Developed and deployed 95%-accurate churn classification model integrated into PowerBI, empowering sales teams
+to make data-driven retention decisions for high-risk customers.</li>
+            <li>Created 90%-accurate monthly sales forecasting models, providing real-time sales projections and facilitating data driven long-term strategic planning.</li>
+            <li>Developed an unsupervised customer segmentation model to identify the best customers for newly launched products.</li>
+          </ul>
       <!-- Work Experience Section -->
       <h2><i class="fas fa-briefcase cv-icon"></i> Work Experience</h2>
       <ul class="list-unstyled">
         <li class="mb-4">
-          <strong>Data Science Specialist - Align Technology</strong> (Jan 2023 – Present, Wroclaw, Poland)
+          <strong>Data Science Specialist - Align Technology</strong> (Jan 2023 – Present, Wrocław, Poland)
           <ul>
-            <li>Developed an Azure-based churn classification model, integrated with PowerBI, reducing customer attrition by 15%.</li>
-            <li>Built Python-based sales forecasting models that updated PowerBI via REST API in real-time.</li>
+            <li>Created a Python framework to integrate Power BI and Azure Data Lake via REST APIs, leveraging Polars for KPI
+calculations and optimizing processing efficiency with chunking and multiprocessing.</li>
+            <li>Built monthly sales forecasting models and automated dynamic Power BI updates using Python and REST APIs.</li>
+            <li> Developed and integrated 95% accuracy of customer churn classification model into live Power BI reports, providing
+sales teams with real-time insights to reduce customer attrition.</li>
           </ul>
         </li>
         <li class="mb-4">
           <strong>Data Scientist - CRISIL Global Research & Risk Solutions</strong> (Apr 2021 – Dec 2022, Wroclaw, Poland)
           <ul>
-            <li>Developed and deployed a Dash app using Python, Docker, and MySQL to calculate portfolio risk rates.</li>
-            <li>Led monthly updates and maintenance of MySQL database, optimizing ETL processes using Python (Luigi, Pandas, Numpy).</li>
+            <li> Developed and deployed a user-interactive Dash App using Python, Docker, and MySQL to calculate portfolio risk rates
+and optimize asset allocation, providing clients with advanced financial analytics tools.</li>
+            <li>Led monthly updates and maintenance of a MySQL Server database, optimizing ETL processes with Python libraries
+(Luigi, Pandas, Numpy) to ensure data accuracy, reliability, and timely reporting.</li>
             <li>Collaborated on predictive models for financial risk assessment, providing key insights for investment strategies.</li>
           </ul>
         </li>
@@ -97,7 +125,8 @@
       <!-- Skills Section -->
       <h2><i class="fas fa-tools cv-icon"></i> Skills</h2>
       <ul class="list-unstyled">
-        <li>Programming Languages: Python (Pandas, Polars, Numpy, TensorFlow), SQL, R</li>
+        <li>Programming Languages: Python (Pandas, Polars, Numpy, Plotly, Seaborn, TensorFlow, PyTorch etc.), SQL, R</li>
+        <li>Tools: Git, Bash</li>
         <li>Machine Learning & AI: Deep Learning, NLP, LLMs, Time Series Forecasting</li>
         <li>Big Data: PySpark, Hadoop, Azure ML, Azure Databricks</li>
         <li>Project Management: Agile Methodologies, JIRA, Confluence, Asana</li>
