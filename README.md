@@ -6,12 +6,12 @@ A modern, responsive portfolio website showcasing my expertise in Data Science, 
 
 - **Modern Design**: Clean, professional dark theme with smooth animations
 - **Responsive Layout**: Optimized for all devices and screen sizes
-- **Dynamic Navigation**: Auto-highlighting active pages
-- **Interactive Elements**: Profile image popup, hover effects, and smooth transitions
+- **Dynamic Navigation**: Auto-highlighting active pages with smart routing
+- **Interactive Elements**: Profile image popup, skills carousel, hover effects, and smooth transitions
 - **Professional Structure**: Well-organized sections for projects, skills, and experience
 - **Project Filtering**: Advanced categorization and filtering system
-- **Centralized Data**: Structured project information for easy maintenance
-- **Integrated Skills**: Core expertise displayed directly on homepage
+- **Integrated Skills**: Interactive skills carousel directly on homepage
+- **Security Enhanced**: XSS protection and Content Security Policy headers
 
 ## 🛠️ Technologies Used
 
@@ -19,39 +19,44 @@ A modern, responsive portfolio website showcasing my expertise in Data Science, 
 - **Framework**: Bootstrap 5.1.3
 - **Icons**: Font Awesome 6.4.0
 - **Fonts**: Google Fonts (Inter)
-- **Deployment**: GitHub Pages
+- **Deployment**: GitHub Pages with automated workflows
+- **Security**: Content Security Policy, HTML sanitization
 
 ## 📁 Project Structure
 
 ```
 shamkhalhajiyev.github.io/
-├── 📄 project-config.json          # Project configuration and metadata
-├── 📄 index.html                   # Homepage with hero section and integrated skills
+├── 📄 index.html                   # Homepage with hero section and interactive skills carousel
 ├── 📄 README.md                    # This documentation file
 ├── 📁 pages/                       # Individual page content
 │   ├── 📄 cv.html                 # Detailed CV/resume page
 │   └── 📄 projects.html           # Portfolio projects showcase
 ├── 📁 assets/                      # Static assets
 │   ├── 📁 css/
-│   │   └── 📄 main.css            # Main stylesheet with CSS variables
+│   │   └── 📄 main.css            # Main stylesheet with CSS variables and animations
 │   ├── 📁 js/
 │   │   ├── 📄 imagePopup.js       # Image modal functionality
-│   │   ├── 📄 loadHeaderFooter.js # Dynamic header/footer loading
-│   │   └── 📄 projects-data.js    # Centralized project data structure
+│   │   ├── 📄 loadHeaderFooter.js # Dynamic header/footer loading with XSS protection
+│   │   └── 📄 skillsCarousel.js   # Interactive skills carousel functionality
 │   ├── 📁 img/
 │   │   └── 📄 pp.jpg              # Profile picture
 │   └── 📁 pdf/
 │       └── 📄 ShamkhalHajiyev_CV.pdf # Downloadable CV
-└── 📁 partials/                    # Reusable HTML components
-    ├── 📄 header.html              # Navigation header
-    └── 📄 footer.html              # Footer with social links
+├── 📁 partials/                    # Reusable HTML components
+│   ├── 📄 header.html              # Navigation header for sub-pages
+│   ├── 📄 header-root.html         # Navigation header for homepage
+│   ├── 📄 footer.html              # Footer for sub-pages
+│   └── 📄 footer-root.html         # Footer for homepage
+└── 📁 .github/                     # GitHub Actions workflow for automated deployment
+    └── 📁 workflows/
+        └── 📄 deploy.yml           # Automated deployment configuration
 ```
 
 ## 🎯 Key Sections
 
 ### Homepage (`index.html`)
 - **Hero Section**: Professional introduction with key metrics and call-to-actions
-- **Skills Section**: Three core expertise areas (Data Science, Data Engineering, Advanced Analytics) displayed as interactive cards
+- **Interactive Skills Carousel**: Three core expertise areas with smooth animations and navigation
 - **About Section**: Expertise overview and professional background
 - **Quick Links**: Professional cards linking to key pages and contact
 - **Interactive Profile**: Clickable profile image with technology overlay
@@ -85,7 +90,8 @@ shamkhalhajiyev.github.io/
 3. **Customize**
    - Update content in HTML files
    - Modify styles in `assets/css/main.css`
-   - Update project data in `assets/js/projects-data.js`
+   - Update skills in the homepage carousel
+   - Modify projects in `pages/projects.html`
 
 ## 🎨 Customization
 
@@ -101,26 +107,18 @@ The design system uses CSS custom properties for easy theming:
 }
 ```
 
-### Project Data Structure
-Projects are centralized in `assets/js/projects-data.js` for easy maintenance:
+### Skills Carousel
+The interactive skills carousel is implemented in `assets/js/skillsCarousel.js`:
 ```javascript
-{
-    id: "project-id",
-    title: "Project Title",
-    status: "Production",
-    category: ["ml", "analytics"],
-    businessImpact: [...],
-    technicalImplementation: [...],
-    technologies: [...],
-    duration: "X months",
-    teamSize: X
-}
+// Skills are defined directly in the HTML for easy maintenance
+// Each skill card includes icon, title, description, and technology tags
+// Navigation controls provide smooth transitions between skills
 ```
 
 ### Adding New Pages
 1. Create new HTML file in `pages/` directory
 2. Include the header/footer placeholders
-3. Add navigation link in `partials/header.html`
+3. Add navigation link in `partials/header.html` and `partials/header-root.html`
 4. Update `loadHeaderFooter.js` if needed
 
 ## 📱 Responsive Design
@@ -148,9 +146,17 @@ Projects are centralized in `assets/js/projects-data.js` for easy maintenance:
 ## 🚀 Performance Features
 
 - **Optimized Assets**: Compressed images and minified CSS/JS
-- **Lazy Loading**: Efficient resource loading
+- **Lazy Loading**: Efficient resource loading with defer attributes
 - **Smooth Animations**: CSS-based animations for better performance
 - **Responsive Images**: Optimized for different screen sizes
+- **Security Optimized**: XSS protection and Content Security Policy
+
+## 🛡️ Security Features
+
+- **Content Security Policy**: Comprehensive security headers
+- **XSS Protection**: HTML sanitization for dynamic content
+- **Secure Headers**: X-Frame-Options, X-Content-Type-Options
+- **Input Validation**: Sanitized HTML loading and rendering
 
 ## 📄 License
 
@@ -169,9 +175,18 @@ While this is a personal portfolio, suggestions and improvements are welcome thr
 ## 🔄 Maintenance
 
 - **Update Frequency**: Monthly content updates
-- **Last Updated**: August 19, 2024
-- **Next Update**: September 19, 2024
-- **Version**: 2.1.0
+- **Last Updated**: January 2025
+- **Next Update**: February 2025
+- **Version**: 3.0.0
+
+## 🚀 Recent Updates (v3.0.0)
+
+- **Major Refactor**: Complete codebase cleanup and optimization
+- **Skills Integration**: Interactive skills carousel on homepage
+- **Security Enhancement**: XSS protection and security headers
+- **Performance Optimization**: Streamlined file structure and loading
+- **Modern UI/UX**: Enhanced animations and responsive design
+- **Automated Deployment**: GitHub Actions workflow for seamless updates
 
 ---
 
