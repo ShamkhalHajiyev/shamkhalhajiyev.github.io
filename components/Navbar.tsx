@@ -16,7 +16,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    setMounted(true);
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   const navigation = [

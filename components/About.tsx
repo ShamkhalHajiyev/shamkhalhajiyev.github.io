@@ -1,72 +1,122 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 /**
- * About section - Professional summary and background
- * Features animated fade-in on scroll
+ * About section - Editorial narrative with supporting cards
+ * Introduces philosophy, delivery style, and operating principles
  */
 export default function About() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '-120px' });
 
   const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 60 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1],
         staggerChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
+  const expertiseHighlights = [
+    {
+      title: 'Cross-functional leadership',
+      copy:
+        'Partnering with commercial, marketing, finance, and product teams to uncover leverage points and translate analytics into rapid wins.',
+      meta: 'Stakeholder-first',
+    },
+    {
+      title: 'Operational excellence',
+      copy:
+        'Designing pipelines, feature stores, and QA rituals that keep models trustworthy—supported by observability and documentation.',
+      meta: 'Reliable delivery',
+    },
+    {
+      title: 'Storytelling with rigour',
+      copy:
+        'Distilling complex experimentation into persuasive narratives that influence executives and empower domain experts.',
+      meta: 'Executive-ready',
+    },
+  ];
+
+  const signatureApproach = [
+    'Advance from exploratory notebooks to hardened APIs with DevOps discipline.',
+    'Blend classical statistics with cutting-edge deep learning and LLM tooling when it materially elevates performance.',
+    'Co-create with business stakeholders to ensure adoption, not just technical success.',
+  ];
+
   return (
-    <section ref={ref} className="section-padding bg-[var(--background)]">
+    <section ref={ref} className="relative bg-[var(--card-bg)]/30 section-padding">
       <div className="container-custom">
         <motion.div
-          className="max-w-4xl mx-auto"
+          className="grid gap-12 xl:gap-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-start"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
         >
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="mb-4">Professional Summary</h2>
-            <div className="w-20 h-1 bg-[var(--primary)] mx-auto rounded-full"></div>
+          <motion.div variants={itemVariants} className="space-y-8">
+            <div className="space-y-4">
+              <span className="section-eyebrow">About</span>
+              <h2>Human-centred data science with enterprise craft</h2>
+              <p className="text-lg leading-relaxed text-[var(--secondary)]">
+                I specialise in translating messy, multi-market data into resilient intelligence systems. Every build is
+                anchored in measurable impact, from improving demand forecasts to unlocking new product insights.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)]/60 p-6 md:p-8">
+              <h3 className="text-xl mb-4">What this means in practice</h3>
+              <ul className="space-y-4 text-base leading-relaxed">
+                {signatureApproach.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <svg
+                      className="mt-1 h-5 w-5 flex-shrink-0 text-[var(--accent-secondary)]"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="space-y-6 text-[var(--secondary)] leading-relaxed">
-            <p className="text-base md:text-lg">
-              Results-oriented <strong className="text-[var(--foreground)]">Data Scientist & Machine Learning Engineer</strong> with expertise in
-              delivering end-to-end data science solutions across predictive modeling, time series forecasting,
-              and advanced analytics. Skilled in <strong className="text-[var(--foreground)]">Python, SQL, and cloud-based platforms</strong> (Azure ML,
-              Databricks, PySpark), with a strong background in Statistics and Machine Learning.
-            </p>
-
-            <p className="text-base md:text-lg">
-              Proven expertise in <strong className="text-[var(--foreground)]">designing and deploying scalable ML pipelines</strong>, automating ETL
-              workflows with Airflow, and integrating models into real-time business applications. Adept at combining
-              data engineering, model development, and interpretability techniques (e.g., SHAP) to generate
-              actionable insights that support strategic decision-making.
-            </p>
-
-            <p className="text-base md:text-lg">
-              Collaborative and agile professional with experience in <strong className="text-[var(--foreground)]">cross-functional teamwork, stakeholder
-              communication, and mentoring</strong>, passionate about applying data science to solve complex problems
-              and drive innovation in dynamic business environments.
-            </p>
+          <motion.div variants={itemVariants} className="space-y-6">
+            {expertiseHighlights.map((highlight, index) => (
+              <motion.div
+                key={highlight.title}
+                variants={itemVariants}
+                transition={{ delay: 0.1 * index }}
+                className="floating-card"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-semibold tracking-[0.18em] uppercase text-[var(--secondary)]">
+                    {highlight.meta}
+                  </span>
+                  <span className="inline-flex h-2 w-2 rounded-full bg-[var(--accent-secondary)]" />
+                </div>
+                <h3 className="text-lg mb-3">{highlight.title}</h3>
+                <p className="text-sm leading-relaxed text-[var(--secondary)] mb-0">{highlight.copy}</p>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </div>
