@@ -37,9 +37,14 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 navbar-blur border-b border-[var(--border)]">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
-          {/* Logo / Name */}
-          <Link href="/" className="text-xl font-bold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
-            Shamkhal Hajiyev
+          {/* Logo / Monogram */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] flex items-center justify-center font-bold text-white text-lg shadow-lg group-hover:shadow-xl transition-all group-hover:scale-105">
+              SH
+            </div>
+            <span className="text-xl font-bold text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors hidden sm:block">
+              Shamkhal Hajiyev
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -48,13 +53,16 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`relative text-sm font-medium transition-all ${
                   isActive(item.href)
-                    ? 'text-[var(--primary)]'
+                    ? 'text-[var(--primary)] font-semibold'
                     : 'text-[var(--secondary)] hover:text-[var(--foreground)]'
                 }`}
               >
                 {item.name}
+                {isActive(item.href) && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] rounded-full"></span>
+                )}
               </Link>
             ))}
 
@@ -176,10 +184,10 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`relative inline-block text-sm font-medium transition-all px-4 py-2 rounded-lg ${
                     isActive(item.href)
-                      ? 'text-[var(--primary)]'
-                      : 'text-[var(--secondary)] hover:text-[var(--foreground)]'
+                      ? 'text-[var(--primary)] font-semibold bg-[var(--primary)]/10'
+                      : 'text-[var(--secondary)] hover:text-[var(--foreground)] hover:bg-[var(--muted)]'
                   }`}
                 >
                   {item.name}

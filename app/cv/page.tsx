@@ -86,7 +86,10 @@ export default function CVPage() {
 
         {/* Professional Summary */}
         <motion.section variants={itemVariants} className="mb-12">
-          <h2 className="text-sm uppercase tracking-widest text-[var(--secondary)] mb-4">Professional Summary</h2>
+          <h2 className="section-title-sm flex items-center gap-2 mb-4">
+            <span className="text-xl">👨‍💼</span>
+            Professional Summary
+          </h2>
           <div className="card">
             <div className="space-y-4 text-[var(--secondary)]">
               <p>
@@ -112,24 +115,30 @@ export default function CVPage() {
 
         {/* Key Achievements */}
         <motion.section variants={itemVariants} className="mb-12">
-          <h2 className="text-sm uppercase tracking-widest text-[var(--secondary)] mb-4">Key Achievements</h2>
+          <h2 className="section-title-sm flex items-center gap-2 mb-4">
+            <span className="text-xl">🎯</span>
+            Key Achievements
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="card">
-              <h3 className="text-base mb-2">Sales Forecasting Excellence</h3>
+              <div className="text-3xl mb-3">📈</div>
+              <h3 className="text-base mb-2 font-bold">Sales Forecasting Excellence</h3>
               <p className="text-sm text-[var(--secondary)]">
                 Developed and deployed 90%-accurate sales forecasting models, reducing planning time by 95% and
                 enabling data-driven strategic decisions.
               </p>
             </div>
             <div className="card">
-              <h3 className="text-base mb-2">Customer Retention Impact</h3>
+              <div className="text-3xl mb-3">💰</div>
+              <h3 className="text-base mb-2 font-bold">Customer Retention Impact</h3>
               <p className="text-sm text-[var(--secondary)]">
                 Built 95%-accurate churn prediction models, improving customer retention by 15% and protecting $2.3M in
                 annual revenue.
               </p>
             </div>
             <div className="card">
-              <h3 className="text-base mb-2">Data Pipeline Optimization</h3>
+              <div className="text-3xl mb-3">⚡</div>
+              <h3 className="text-base mb-2 font-bold">Data Pipeline Optimization</h3>
               <p className="text-sm text-[var(--secondary)]">
                 Modernized ETL processes achieving 40% performance improvement and 10x increase in data processing
                 capacity.
@@ -140,7 +149,10 @@ export default function CVPage() {
 
         {/* Professional Experience */}
         <motion.section variants={itemVariants} className="mb-12">
-          <h2 className="text-sm uppercase tracking-widest text-[var(--secondary)] mb-4">Professional Experience</h2>
+          <h2 className="section-title-sm flex items-center gap-2 mb-4">
+            <span className="text-xl">💼</span>
+            Professional Experience
+          </h2>
 
           {/* Current Role */}
           <div className="card mb-6">
@@ -221,7 +233,10 @@ export default function CVPage() {
 
         {/* Education */}
         <motion.section variants={itemVariants} className="mb-12">
-          <h2 className="text-sm uppercase tracking-widest text-[var(--secondary)] mb-4">Education</h2>
+          <h2 className="section-title-sm flex items-center gap-2 mb-4">
+            <span className="text-xl">🎓</span>
+            Education
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
               <h3 className="text-base mb-2">Master of Arts in Data Science and Business Analytics</h3>
@@ -240,43 +255,58 @@ export default function CVPage() {
 
         {/* Technical Skills */}
         <motion.section variants={itemVariants} className="mb-12">
-          <h2 className="text-sm uppercase tracking-widest text-[var(--secondary)] mb-4">Technical Skills</h2>
+          <h2 className="section-title-sm flex items-center gap-2 mb-4">
+            <span className="text-xl">🛠️</span>
+            Technical Skills
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
-              <h3 className="text-base mb-3 text-[var(--primary)]">Programming Languages & Tools</h3>
+              <h3 className="text-base mb-3 font-bold flex items-center gap-2">
+                <span>💻</span>
+                Programming Languages & Tools
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {['Python', 'R Programming', 'SQL', 'GIT', 'Docker', 'Bash'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-[var(--primary)]/10 rounded-full text-sm text-[var(--foreground)]">
+                  <span key={skill} className="chip text-xs">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
             <div className="card">
-              <h3 className="text-base mb-3 text-[var(--primary)]">Machine Learning & AI</h3>
+              <h3 className="text-base mb-3 font-bold flex items-center gap-2">
+                <span>🤖</span>
+                Machine Learning & AI
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {['Statistics', 'Machine Learning', 'Deep Learning', 'Time Series Forecasting', 'Generative AI', 'Large Language Models (LLMs)'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-[var(--primary)]/10 rounded-full text-sm text-[var(--foreground)]">
+                  <span key={skill} className="chip text-xs">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
             <div className="card">
-              <h3 className="text-base mb-3 text-[var(--primary)]">Data Engineering & Pipelines</h3>
+              <h3 className="text-base mb-3 font-bold flex items-center gap-2">
+                <span>⚙️</span>
+                Data Engineering & Pipelines
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {['ETL Development', 'Data Wrangling', 'Feature Engineering', 'Workflow Automation', 'Airflow', 'Luigi', 'API Integration'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-[var(--primary)]/10 rounded-full text-sm text-[var(--foreground)]">
+                  <span key={skill} className="chip text-xs">
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
             <div className="card">
-              <h3 className="text-base mb-3 text-[var(--primary)]">Big Data & Cloud Services</h3>
+              <h3 className="text-base mb-3 font-bold flex items-center gap-2">
+                <span>☁️</span>
+                Big Data & Cloud Services
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {['Azure ML', 'Azure Databricks', 'Fabric', 'PySpark'].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-[var(--primary)]/10 rounded-full text-sm text-[var(--foreground)]">
+                  <span key={skill} className="chip text-xs">
                     {skill}
                   </span>
                 ))}
@@ -287,7 +317,10 @@ export default function CVPage() {
 
         {/* Certifications */}
         <motion.section variants={itemVariants} className="mb-12">
-          <h2 className="text-sm uppercase tracking-widest text-[var(--secondary)] mb-4">Professional Certifications</h2>
+          <h2 className="section-title-sm flex items-center gap-2 mb-4">
+            <span className="text-xl">🏆</span>
+            Professional Certifications
+          </h2>
           <div className="space-y-3">
             {[
               {
@@ -326,7 +359,10 @@ export default function CVPage() {
 
         {/* Languages */}
         <motion.section variants={itemVariants} className="mb-12">
-          <h2 className="text-sm uppercase tracking-widest text-[var(--secondary)] mb-4">Languages</h2>
+          <h2 className="section-title-sm flex items-center gap-2 mb-4">
+            <span className="text-xl">🌍</span>
+            Languages
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { name: 'English', level: 'Fluent' },
