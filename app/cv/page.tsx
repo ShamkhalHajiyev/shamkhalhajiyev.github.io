@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import type { Metadata } from 'next';
 
 /**
  * CV Page - Comprehensive curriculum vitae
@@ -383,7 +382,7 @@ export default function CVPage() {
           <div className="card py-8">
             <h3 className="mb-3">Interested in Collaboration?</h3>
             <p className="text-[var(--secondary)] mb-6">
-              I'm always open to discussing new opportunities, interesting problems, or potential collaborations.
+              I&apos;m always open to discussing new opportunities, interesting problems, or potential collaborations.
             </p>
             <a href="mailto:hajiyev.shamkhal@gmail.com" className="btn btn-primary">
               <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

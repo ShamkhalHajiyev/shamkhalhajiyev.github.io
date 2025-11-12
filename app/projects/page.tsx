@@ -292,7 +292,7 @@ export default function ProjectsPage() {
         >
           <div className="text-center p-12 rounded-2xl bg-gradient-to-br from-[var(--primary)]/5 to-[var(--accent)]/5 border border-[var(--border)]">
             <h3 className="text-2xl font-bold mb-3 text-[var(--foreground)]">
-              Let's Build Something Amazing
+              Let&apos;s Build Something Amazing
             </h3>
             <p className="text-[var(--secondary)] mb-6 max-w-2xl mx-auto">
               Open to discussing data science opportunities, challenging problems, and collaborative projects.
