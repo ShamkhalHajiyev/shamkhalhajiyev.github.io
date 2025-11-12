@@ -4,134 +4,139 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 /**
- * Projects Page - Showcase of professional projects
- * Features filtering by category and animated project cards
+ * Projects Page - Modern professional showcase
+ * Features scannable cards, visual hierarchy, and filtering
  */
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const filters = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'ml', label: 'Machine Learning' },
-    { id: 'data-engineering', label: 'Data Engineering' },
-    { id: 'analytics', label: 'Business Analytics' },
-    { id: 'automation', label: 'Process Automation' },
+    { id: 'all', label: '📊 All Projects', count: 6 },
+    { id: 'ml', label: '🤖 Machine Learning', count: 3 },
+    { id: 'data-engineering', label: '⚙️ Data Engineering', count: 3 },
+    { id: 'analytics', label: '📈 Analytics', count: 4 },
   ];
 
   const projects = [
     {
-      title: 'Predictive Sales Forecasting System',
-      description: 'End-to-end automated sales forecasting pipeline with real-time Power BI integration, enabling data-driven strategic planning and resource allocation.',
-      categories: ['ml', 'analytics', 'automation'],
+      title: 'Sales Forecasting System',
+      subtitle: 'Predictive Analytics Pipeline',
+      description: 'Automated sales forecasting with real-time Power BI integration for strategic planning.',
+      categories: ['ml', 'analytics'],
       status: 'Production',
-      impact: [
-        '90% forecast accuracy (vs. 65% manual baseline)',
-        '95% reduction in forecasting time',
-        'Real-time insights for 50+ sales team members',
-      ],
-      technical: [
-        'Time series models (Prophet, SARIMA)',
-        'Azure Data Lake + Power BI integration',
-        'Automated monthly retraining pipeline',
+      impact: {
+        accuracy: '90%',
+        efficiency: '95% faster',
+        users: '50+ team members'
+      },
+      keyMetrics: [
+        { label: 'Forecast Accuracy', value: '90%', improvement: '+25% vs baseline' },
+        { label: 'Time Saved', value: '95%', improvement: 'planning time reduction' },
+        { label: 'User Adoption', value: '50+', improvement: 'sales team members' }
       ],
       technologies: ['Python', 'Prophet', 'Power BI', 'Azure ML', 'REST APIs'],
       duration: '8 months',
-      team: '3 people',
+      team: '3',
     },
     {
-      title: 'Customer Churn Prediction Engine',
-      description: 'ML-powered churn detection system providing real-time risk scoring and actionable retention recommendations for sales teams.',
+      title: 'Churn Prediction Engine',
+      subtitle: 'Customer Retention System',
+      description: 'ML-powered risk scoring delivering actionable retention insights.',
       categories: ['ml', 'analytics'],
       status: 'Production',
-      impact: [
-        '95% model accuracy (AUC-ROC: 0.94)',
-        '15% improvement in customer retention',
-        '$2.3M annual revenue protection',
+      impact: {
+        accuracy: '95%',
+        retention: '+15%',
+        revenue: '$2.3M protected'
+      },
+      keyMetrics: [
+        { label: 'Model Accuracy', value: '95%', improvement: 'AUC-ROC: 0.94' },
+        { label: 'Retention Lift', value: '+15%', improvement: 'customer retention' },
+        { label: 'Revenue Impact', value: '$2.3M', improvement: 'annual protection' }
       ],
-      technical: [
-        'Gradient Boosting (XGBoost) classifier',
-        'Feature engineering pipeline (150+ features)',
-        'Real-time Power BI dashboard integration',
-      ],
-      technologies: ['XGBoost', 'Feature Engineering', 'Azure ML', 'Power BI', 'MLOps'],
+      technologies: ['XGBoost', 'Azure ML', 'Power BI', 'SHAP', 'MLOps'],
       duration: '6 months',
-      team: '2 people',
+      team: '2',
     },
     {
-      title: 'Power BI x Azure Data Lake Framework',
-      description: 'Scalable data integration framework connecting Power BI with Azure Data Lake, optimized for large-scale KPI calculations and real-time analytics.',
-      categories: ['data-engineering', 'automation'],
+      title: 'Data Lake Integration',
+      subtitle: 'Power BI Analytics Framework',
+      description: 'Scalable integration framework for large-scale KPI calculations.',
+      categories: ['data-engineering'],
       status: 'Production',
-      impact: [
-        '40% improvement in data processing speed',
-        '10x increase in data volume capacity',
-        'Reusable framework for 5+ business units',
+      impact: {
+        performance: '+40%',
+        capacity: '10x',
+        reusability: '5+ units'
+      },
+      keyMetrics: [
+        { label: 'Processing Speed', value: '+40%', improvement: 'faster execution' },
+        { label: 'Data Capacity', value: '10x', improvement: 'volume increase' },
+        { label: 'Adoption', value: '5+', improvement: 'business units' }
       ],
-      technical: [
-        'Polars-based data processing engine',
-        'REST API integration layer',
-        'Multiprocessing optimization',
-      ],
-      technologies: ['Polars', 'REST APIs', 'Azure Data Lake', 'Multiprocessing', 'Python'],
+      technologies: ['Polars', 'REST APIs', 'Azure Data Lake', 'Python'],
       duration: '4 months',
-      team: '2 people',
+      team: '2',
     },
     {
-      title: 'Portfolio Risk Assessment Platform',
-      description: 'Interactive financial analytics platform for portfolio risk assessment, asset allocation optimization, and real-time risk monitoring.',
+      title: 'Risk Assessment Platform',
+      subtitle: 'Portfolio Analytics System',
+      description: 'Real-time risk monitoring and asset allocation optimization.',
       categories: ['analytics', 'data-engineering'],
       status: 'Completed',
-      impact: [
-        'Real-time risk monitoring for $50M+ portfolios',
-        'Interactive asset allocation optimization',
-        'Client-facing analytics dashboard',
+      impact: {
+        portfolio: '$50M+',
+        features: 'Real-time',
+        delivery: 'Client-facing'
+      },
+      keyMetrics: [
+        { label: 'Portfolio Size', value: '$50M+', improvement: 'under management' },
+        { label: 'Processing', value: 'Real-time', improvement: 'risk monitoring' },
+        { label: 'Interface', value: 'Client', improvement: 'analytics dashboard' }
       ],
-      technical: [
-        'Risk metrics calculation engine',
-        'MySQL data warehouse',
-        'Docker containerization',
-      ],
-      technologies: ['Python', 'Dash', 'Docker', 'MySQL', 'Financial Analytics'],
+      technologies: ['Python', 'Dash', 'Docker', 'MySQL', 'FinTech'],
       duration: '5 months',
-      team: '3 people',
+      team: '3',
     },
     {
-      title: 'Customer Segmentation & Targeting',
-      description: 'Unsupervised learning system for customer segmentation, enabling targeted marketing campaigns and personalized product recommendations.',
+      title: 'Customer Segmentation',
+      subtitle: 'ML-Driven Targeting System',
+      description: 'Unsupervised learning for personalized marketing campaigns.',
       categories: ['ml', 'analytics'],
       status: 'Production',
-      impact: [
-        '8 distinct customer segments identified',
-        '25% improvement in campaign conversion rates',
-        '$1.8M additional revenue from targeted campaigns',
+      impact: {
+        segments: '8',
+        conversion: '+25%',
+        revenue: '$1.8M'
+      },
+      keyMetrics: [
+        { label: 'Segments', value: '8', improvement: 'distinct clusters' },
+        { label: 'Conversion', value: '+25%', improvement: 'campaign performance' },
+        { label: 'Revenue', value: '$1.8M', improvement: 'additional income' }
       ],
-      technical: [
-        'K-means clustering algorithm',
-        'Behavioral & transactional features',
-        'Monthly segmentation updates',
-      ],
-      technologies: ['Scikit-learn', 'Clustering', 'Feature Engineering', 'Power BI', 'Python'],
+      technologies: ['Scikit-learn', 'K-means', 'Power BI', 'Python'],
       duration: '3 months',
-      team: '2 people',
+      team: '2',
     },
     {
       title: 'ETL Pipeline Modernization',
-      description: 'Modernized legacy ETL processes using Python and Luigi, improving data reliability, processing speed, and monitoring capabilities.',
-      categories: ['data-engineering', 'automation'],
+      subtitle: 'Data Infrastructure Upgrade',
+      description: 'Legacy system modernization with automated monitoring.',
+      categories: ['data-engineering'],
       status: 'Production',
-      impact: [
-        '60% reduction in processing time',
-        '99.9% data quality improvement',
-        'Real-time pipeline monitoring',
-      ],
-      technical: [
-        'Luigi workflow orchestration',
-        'MySQL optimization & indexing',
-        'Data quality monitoring',
+      impact: {
+        speed: '+60%',
+        quality: '99.9%',
+        monitoring: 'Real-time'
+      },
+      keyMetrics: [
+        { label: 'Processing Time', value: '-60%', improvement: 'faster execution' },
+        { label: 'Data Quality', value: '99.9%', improvement: 'pipeline uptime' },
+        { label: 'Monitoring', value: 'Real-time', improvement: 'visibility' }
       ],
       technologies: ['Python', 'Luigi', 'MySQL', 'Pandas', 'ETL'],
       duration: '4 months',
-      team: '2 people',
+      team: '2',
     },
   ];
 
@@ -139,188 +144,168 @@ export default function ProjectsPage() {
     (project) => activeFilter === 'all' || project.categories.includes(activeFilter)
   );
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
     <div className="min-h-screen bg-[var(--background)]">
       <div className="container-custom section-padding">
+
+        {/* Hero Section */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="section-header"
         >
-          {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <h1 className="mb-4">Portfolio Projects</h1>
-            <p className="text-lg text-[var(--secondary)] max-w-2xl mx-auto">
-              Real-world solutions delivering measurable business impact
-            </p>
-          </motion.div>
+          <h1 className="section-title">Portfolio Projects</h1>
+          <p className="section-subtitle">
+            Real-world data science solutions delivering measurable business impact across ML, analytics, and data engineering domains.
+          </p>
+        </motion.div>
 
-          {/* Filter Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3 mb-8">
-            {filters.map((filter) => (
-              <button
-                key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                  activeFilter === filter.id
-                    ? 'bg-[var(--primary)] text-white'
-                    : 'bg-[var(--card-bg)] text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--primary)]'
-                }`}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </motion.div>
+        {/* Confidentiality Notice */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="mb-12 max-w-4xl mx-auto"
+        >
+          <div className="flex items-start gap-4 p-6 rounded-xl bg-gradient-to-r from-blue-50 to-teal-50 dark:from-blue-900/20 dark:to-teal-900/20 border border-blue-200/50 dark:border-blue-800/50">
+            <div className="icon-wrapper">
+              <svg className="icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h4 className="font-semibold text-[var(--foreground)] mb-1">Project Confidentiality</h4>
+              <p className="text-sm text-[var(--secondary)] leading-relaxed">
+                All projects are from professional work. Metrics and outcomes reflect real commercial impact.
+                Implementation details are high-level due to confidentiality agreements.
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
-          {/* Privacy Notice */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <div className="card bg-[var(--primary)]/5 border-[var(--primary)]/20">
-              <div className="flex items-start">
-                <svg
-                  className="w-6 h-6 mr-3 text-[var(--primary)] flex-shrink-0 mt-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <div>
-                  <p className="font-semibold text-[var(--foreground)] mb-1">Privacy Notice</p>
-                  <p className="text-sm text-[var(--secondary)]">
-                    The projects showcased here are work-related and contain confidential business information. While I
-                    can share the business impact and technical approach, detailed implementation code and internal
-                    documentation cannot be made public due to company privacy policies.
-                  </p>
+        {/* Filter Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-3 mb-12"
+        >
+          {filters.map((filter) => (
+            <button
+              key={filter.id}
+              onClick={() => setActiveFilter(filter.id)}
+              className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
+            >
+              {filter.label}
+              <span className="ml-2 text-xs opacity-75">({filter.count})</span>
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Projects Grid */}
+        <motion.div
+          layout
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+        >
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              layout
+              className="project-card group"
+            >
+              {/* Card Header */}
+              <div className="flex justify-between items-start mb-4">
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-[var(--foreground)] mb-1 group-hover:text-[var(--accent)] transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm font-medium text-[var(--accent)]">{project.subtitle}</p>
+                </div>
+                <span className={`badge ml-3 ${project.status === 'Production' ? 'badge-success' : 'badge-primary'}`}>
+                  {project.status === 'Production' ? '🚀 Live' : '✅ Done'}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-[var(--secondary)] mb-6 leading-relaxed">
+                {project.description}
+              </p>
+
+              {/* Key Metrics */}
+              <div className="mb-6">
+                <h4 className="text-sm font-bold text-[var(--foreground)] uppercase tracking-wider mb-4 flex items-center">
+                  <span className="w-8 h-1 bg-[var(--accent)] rounded mr-3"></span>
+                  Impact Metrics
+                </h4>
+                <div className="grid grid-cols-3 gap-4">
+                  {project.keyMetrics.map((metric, i) => (
+                    <div key={i} className="text-center p-3 rounded-lg bg-[var(--muted)] border border-[var(--border)]">
+                      <div className="text-2xl font-bold text-[var(--accent)] mb-1">{metric.value}</div>
+                      <div className="text-xs text-[var(--secondary)] leading-tight">{metric.label}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-          </motion.div>
 
-          {/* Projects Grid */}
-          <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6"
-            variants={containerVariants}
-          >
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                layout
-                className="card h-full flex flex-col"
-              >
-                {/* Header */}
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl">{project.title}</h3>
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      project.status === 'Production'
-                        ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
-                        : 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
-                    }`}
-                  >
-                    {project.status}
-                  </span>
+              {/* Technologies */}
+              <div className="mb-6">
+                <h4 className="text-xs font-semibold text-[var(--secondary)] uppercase tracking-wider mb-3">Tech Stack</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span key={tech} className="chip">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
+              </div>
 
-                {/* Description */}
-                <p className="text-sm text-[var(--secondary)] mb-4">{project.description}</p>
-
-                {/* Business Impact */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-[var(--primary)] mb-2">Business Impact:</h4>
-                  <ul className="space-y-1">
-                    {project.impact.map((item, i) => (
-                      <li key={i} className="flex items-start text-sm text-[var(--secondary)]">
-                        <svg className="w-4 h-4 mr-2 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Technical Implementation */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-[var(--primary)] mb-2">Technical Implementation:</h4>
-                  <ul className="space-y-1">
-                    {project.technical.map((item, i) => (
-                      <li key={i} className="flex items-start text-sm text-[var(--secondary)]">
-                        <svg className="w-4 h-4 mr-2 text-[var(--primary)] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Technologies */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-[var(--primary)] mb-2">Technologies:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-[var(--primary)]/10 rounded text-xs text-[var(--foreground)]"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Footer */}
-                <div className="flex justify-between items-center text-xs text-[var(--secondary)] mt-auto pt-4 border-t border-[var(--border)]">
-                  <span>Duration: {project.duration} | Team: {project.team}</span>
-                  <span className="flex items-center">
-                    <svg className="w-3 h-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              {/* Footer Metadata */}
+              <div className="flex items-center justify-between pt-4 mt-auto border-t border-[var(--border)]">
+                <div className="flex items-center gap-4 text-xs text-[var(--secondary)]">
+                  <span className="flex items-center gap-1">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    Confidential
+                    {project.duration}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    Team of {project.team}
                   </span>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Call to Action */}
-          <motion.div variants={itemVariants} className="mt-12">
-            <div className="card text-center py-8">
-              <h3 className="mb-3">Interested in Collaboration?</h3>
-              <p className="text-[var(--secondary)] mb-6">
-                I'm always open to discussing new opportunities, interesting problems, or potential collaborations.
-              </p>
-              <a href="mailto:hajiyev.shamkhal@gmail.com" className="btn btn-primary">
-                Get in Touch
-              </a>
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mt-16"
+        >
+          <div className="text-center p-12 rounded-2xl bg-gradient-to-br from-[var(--primary)]/5 to-[var(--accent)]/5 border border-[var(--border)]">
+            <h3 className="text-2xl font-bold mb-3 text-[var(--foreground)]">
+              Let's Build Something Amazing
+            </h3>
+            <p className="text-[var(--secondary)] mb-6 max-w-2xl mx-auto">
+              Open to discussing data science opportunities, challenging problems, and collaborative projects.
+            </p>
+            <a href="mailto:hajiyev.shamkhal@gmail.com" className="btn btn-primary">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Get in Touch
+            </a>
+          </div>
+        </motion.div>
+
       </div>
     </div>
   );

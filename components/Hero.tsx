@@ -29,12 +29,10 @@ export default function Hero() {
   };
 
   const techStack = [
-    'Python | R | SQL',
-    'Docker | Git | Bash',
-    'Azure ML | Azure Databricks | Fabric | PySpark',
-    'Machine Learning | Deep Learning | Time Series',
-    'Generative AI | LLMs | NLP',
-    'ETL | Airflow | Luigi | API Integration',
+    { category: 'Languages', items: ['Python', 'R', 'SQL'], icon: '💻' },
+    { category: 'Cloud & Tools', items: ['Azure ML', 'Databricks', 'Docker', 'Git'], icon: '☁️' },
+    { category: 'ML/AI', items: ['Machine Learning', 'Deep Learning', 'NLP', 'LLMs'], icon: '🤖' },
+    { category: 'Data Engineering', items: ['PySpark', 'ETL', 'Airflow', 'API Integration'], icon: '⚙️' },
   ];
 
   return (
@@ -121,17 +119,33 @@ export default function Hero() {
           {/* Right Content - Tech Stack */}
           <motion.div variants={itemVariants} className="hidden lg:block">
             <div className="card p-8">
-              <h3 className="text-lg font-semibold mb-6 text-center">Technology Stack</h3>
-              <div className="space-y-3">
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <div className="w-8 h-1 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] rounded-full"></div>
+                <h3 className="text-lg font-bold text-center">Technology Stack</h3>
+                <div className="w-8 h-1 bg-gradient-to-l from-[var(--primary)] to-[var(--accent)] rounded-full"></div>
+              </div>
+              <div className="space-y-4">
                 {techStack.map((tech, index) => (
                   <motion.div
-                    key={index}
+                    key={tech.category}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
-                    className="px-4 py-2 rounded-lg bg-[var(--primary)]/5 border border-[var(--border)] text-center"
+                    className="group"
                   >
-                    <p className="text-sm text-[var(--foreground)]">{tech}</p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xl">{tech.icon}</span>
+                      <h4 className="text-xs font-semibold text-[var(--secondary)] uppercase tracking-wider">
+                        {tech.category}
+                      </h4>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {tech.items.map((item) => (
+                        <span key={item} className="chip text-xs">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </motion.div>
                 ))}
               </div>
