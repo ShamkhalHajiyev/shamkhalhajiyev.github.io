@@ -31,6 +31,68 @@ body {
     overflow-x: hidden;
 }
 
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Apply animations to sections */
+section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
@@ -237,12 +299,29 @@ header {
 .btn-primary {
     background: var(--accent-color);
     color: var(--primary-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
 }
 
 .btn-primary:hover {
     background: #00b8e6;
     transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.4);
 }
 
 .btn-outline {
@@ -1402,8 +1481,21 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 20%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 50%);
     pointer-events: none;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(5deg);
+    }
 }
 
 .hero-content-new {
@@ -1441,6 +1533,7 @@ footer {
     background-clip: text;
     line-height: 1.1;
     white-space: nowrap;
+    animation: slideInLeft 0.8s ease-out;
 }
 
 /* Title Company Row */
@@ -1580,14 +1673,16 @@ footer {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--accent-color);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    transition: var(--transition);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(0, 212, 255, 0.2);
+    transition: all 0.4s ease;
     cursor: pointer;
+    animation: fadeIn 1s ease-out;
 }
 
 .profile-image-new:hover {
-    transform: scale(1.05);
-    box-shadow: 0 25px 50px rgba(0, 212, 255, 0.3);
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 25px 50px rgba(0, 212, 255, 0.4), 0 0 100px rgba(0, 212, 255, 0.5);
+    border-color: #00fff7;
 }
 
 /* Tech Stack New */
@@ -1613,14 +1708,35 @@ footer {
     font-size: 0.875rem;
     font-weight: 500;
     border: 1px solid rgba(0, 212, 255, 0.2);
-    transition: var(--transition);
+    transition: all 0.3s ease;
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-item-new::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 212, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.tech-item-new:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .tech-item-new:hover {
     background: rgba(0, 212, 255, 0.2);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+    border-color: var(--accent-color);
 }
 
 /* Skills Section New */
