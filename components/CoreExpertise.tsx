@@ -1,108 +1,129 @@
 'use client';
 
-type FocusArea = {
-  title: string;
-  summary: string;
-  bullets: string[];
-};
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
-type ToolkitGroup = {
-  label: string;
-  stack: string[];
-};
-
-const focusAreas: FocusArea[] = [
-  {
-    title: 'Predictive intelligence',
-    summary:
-      'Forecasting demand, revenue, and customer behaviour using ensembles, deep learning, and interpretable models tuned for executive decision-making.',
-    bullets: [
-      'Sales and supply forecasts with LSTM, ARIMA, Prophet, and Gradient Boosting.',
-      'Customer churn and conversion modelling with SHAP-driven storytelling.',
-      'Scenario planning dashboards embedded in Power BI and Tableau.',
-    ],
-  },
-  {
-    title: 'Operational analytics',
-    summary:
-      'Reimagining processes with data products that unlock speed, resilience, and transparency across logistics and commercial functions.',
-    bullets: [
-      'Program performance benchmarking across 19+ KPIs with automated data ingestion.',
-      'Route optimisation, pricing elasticity, and marketing attribution insights.',
-      'Design of monitoring frameworks that surface anomalies before they escalate.',
-    ],
-  },
-  {
-    title: 'Data science enablement',
-    summary:
-      'Coaching teams on experimentation best practices, reproducible codebases, and analytics literacy to scale impact sustainably.',
-    bullets: [
-      'Documentation-first approach with templates, runbooks, and onboarding kits.',
-      'Technical mentorship for analysts adopting Python, SQL, and ML workflows.',
-      'Workshops that convert model output into actionable narratives for stakeholders.',
-    ],
-  },
-];
-
-const toolkits: ToolkitGroup[] = [
-  {
-    label: 'Languages & Modelling',
-    stack: ['Python', 'R', 'SQL', 'PySpark', 'Scikit-learn', 'TensorFlow', 'CatBoost', 'LightGBM'],
-  },
-  {
-    label: 'Data & MLOps',
-    stack: ['Azure ML', 'Databricks', 'MLflow', 'Airflow', 'Docker', 'Power BI', 'dbt'],
-  },
-  {
-    label: 'Methodologies',
-    stack: ['Time-series forecasting', 'Segmentation & clustering', 'Predictive maintenance', 'Experiment design', 'SHAP & interpretability'],
-  },
-];
-
-const certifications: string[] = [
-  'Microsoft Certified: Azure Data Scientist Associate',
-  'Google Advanced Data Analytics Professional Certificate',
-  'Google Business Intelligence Professional Certificate',
-];
-
+/**
+ * Core Expertise section - Structured capability grid
+ * Highlights core domains with clarity and modern micro-interactions
+ */
 export default function CoreExpertise() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-120px' });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.18,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 32 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.55, ease: [0.18, 0.89, 0.32, 1.28] },
+    },
+  };
+
+  const expertiseAreas = [
+    {
+      icon: '🤖',
+      title: 'Predictive Data Science',
+      descriptor: 'Intelligent models with measurable ROI',
+      description:
+        'Design and deploy statistical and deep learning systems that forecast demand, score churn, and prioritise opportunities.',
+      focus: ['Forecasting & time series', 'Experiment design & uplift modelling', 'ML interpretability with SHAP'],
+      tooling: ['CatBoost', 'LightGBM', 'Prophet', 'PyTorch'],
+    },
+    {
+      icon: '📊',
+      title: 'Decision Intelligence',
+      descriptor: 'Analytics that inspire confident action',
+      description:
+        'Blend BI craftsmanship with ML insights to surface clear stories, KPIs, and strategic recommendations for leadership.',
+      focus: ['Executive dashboards', 'Scenario planning', 'Segmentation & persona design'],
+      tooling: ['Power BI', 'dbt', 'Azure Data Explorer'],
+    },
+    {
+      icon: '⚙️',
+      title: 'Data Engineering & MLOps',
+      descriptor: 'Scalable foundations for every model',
+      description:
+        'Engineer data products, orchestrate pipelines, and automate model lifecycles so solutions remain resilient in production.',
+      focus: ['Feature store design', 'Automated retraining', 'API + microservice deployment'],
+      tooling: ['Azure ML', 'Databricks', 'Airflow', 'Docker'],
+    },
+  ];
+
   return (
-    <section className="page-section" id="expertise">
+    <section ref={ref} className="section-padding bg-[var(--background-soft)]/40">
       <div className="container-custom">
-        <div className="section-intro centered">
-          <span className="eyebrow">Expertise</span>
-          <h2 className="section-title">Deep domain knowledge across the data science lifecycle</h2>
-          <p className="section-description">
-            I combine statistical rigour with systems thinking—shipping models, automation, and enablement programmes that
-            stay maintainable long after the first release.
-          </p>
-        </div>
+        <motion.div
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          variants={containerVariants}
+          className="space-y-12"
+        >
+          <motion.div variants={cardVariants} className="text-center space-y-4 max-w-3xl mx-auto">
+            <span className="section-eyebrow">Core Expertise</span>
+            <h2>Where strategy, science, and engineering intersect</h2>
+            <p className="text-lg text-[var(--secondary)]">
+              Each engagement is grounded in disciplined experimentation, transparent communication, and production-grade craft.
+            </p>
+          </motion.div>
 
-        <div className="card-grid columns-3">
-          {focusAreas.map((area) => (
-            <article key={area.title} className="content-card">
-              <h3>{area.title}</h3>
-              <p>{area.summary}</p>
-              <ul className="list-styled">
-                {area.bullets.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {expertiseAreas.map((area, index) => (
+              <motion.div
+                key={area.title}
+                variants={cardVariants}
+                transition={{ delay: 0.08 * index }}
+                className="card flex flex-col gap-6 h-full"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--muted)] text-2xl">
+                    {area.icon}
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--secondary)] mb-1">
+                      {area.descriptor}
+                    </p>
+                    <h3 className="text-xl leading-tight">{area.title}</h3>
+                  </div>
+                </div>
 
-        <div className="page-section" style={{ paddingTop: '4rem', paddingBottom: '0' }}>
-          <div className="card-grid columns-3">
-            {toolkits.map((group) => (
-              <div key={group.label} className="tools-card">
-                <h4>{group.label}</h4>
-                <ul>
-                  {group.stack.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+                <p className="text-sm leading-relaxed text-[var(--secondary)] mb-0">{area.description}</p>
+
+                <div className="space-y-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--secondary)]">Key Focus</p>
+                  <ul className="space-y-2">
+                    {area.focus.map((focusItem) => (
+                      <li key={focusItem} className="flex items-start gap-2 text-sm text-[var(--secondary)]">
+                        <span className="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[var(--accent-secondary)]" />
+                        <span>{focusItem}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-auto pt-4 border-t border-dashed border-[var(--border)]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--secondary)] mb-2">
+                    Trusted Toolset
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {area.tooling.map((tool) => (
+                      <span key={tool} className="chip text-xs">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
