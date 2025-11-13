@@ -1,121 +1,113 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+const focusAreas = [
+  {
+    title: 'Predictive intelligence',
+    summary:
+      'Forecasting demand, revenue, and customer behaviour using ensembles, deep learning, and interpretable models tuned for executive decision-making.',
+    bullets: [
+      'Sales and supply forecasts with LSTM, ARIMA, Prophet, and Gradient Boosting.',
+      'Customer churn and conversion modelling with SHAP-driven storytelling.',
+      'Scenario planning dashboards embedded in Power BI and Tableau.',
+    ],
+  },
+  {
+    title: 'Operational analytics',
+    summary:
+      'Reimagining processes with data products that unlock speed, resilience, and transparency across logistics and commercial functions.',
+    bullets: [
+      'Program performance benchmarking across 19+ KPIs with automated data ingestion.',
+      'Route optimisation, pricing elasticity, and marketing attribution insights.',
+      'Design of monitoring frameworks that surface anomalies before they escalate.',
+    ],
+  },
+  {
+    title: 'Data science enablement',
+    summary:
+      'Coaching teams on experimentation best practices, reproducible codebases, and analytics literacy to scale impact sustainably.',
+    bullets: [
+      'Documentation-first approach with templates, runbooks, and onboarding kits.',
+      'Technical mentorship for analysts adopting Python, SQL, and ML workflows.',
+      'Workshops that convert model output into actionable narratives for stakeholders.',
+    ],
+  },
+];
 
-/**
- * Core Expertise section - Displays key skill areas in card format
- * Features animated cards with hover effects
- */
+const toolkits = [
+  {
+    label: 'Languages & Modelling',
+    stack: ['Python', 'R', 'SQL', 'PySpark', 'Scikit-learn', 'TensorFlow', 'CatBoost', 'LightGBM'],
+  },
+  {
+    label: 'Data & MLOps',
+    stack: ['Azure ML', 'Databricks', 'MLflow', 'Airflow', 'Docker', 'Power BI', 'dbt'],
+  },
+  {
+    label: 'Methodologies',
+    stack: ['Time-series forecasting', 'Segmentation & clustering', 'Predictive maintenance', 'Experiment design', 'SHAP & interpretability'],
+  },
+];
+
+const certifications = [
+  'Microsoft Certified: Azure Data Scientist Associate',
+  'Google Advanced Data Analytics Professional Certificate',
+  'Google Business Intelligence Professional Certificate',
+];
+
 export default function CoreExpertise() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const expertiseAreas = [
-    {
-      title: 'Data Science & ML',
-      description: 'Expert in Statistics, Machine Learning, Deep Learning, Time Series Forecasting, Generative AI, and Large Language Models',
-      skills: [
-        'Statistics & Hypothesis Testing',
-        'Supervised & Unsupervised Learning',
-        'Deep Learning & Neural Networks',
-        'Time Series Forecasting (LSTM, ARIMA)',
-        'Generative AI & LLMs',
-        'Model Interpretability (SHAP)',
-      ],
-    },
-    {
-      title: 'Business Intelligence',
-      description: 'Advanced analytics and visualization expertise for data-driven decision making',
-      skills: [
-        'Power BI & Advanced DAX',
-        'Real-time Dashboard Development',
-        'KPI Design & Monitoring',
-        'Predictive Analytics',
-        'Business Metrics Optimization',
-        'Stakeholder Reporting',
-      ],
-    },
-    {
-      title: 'Data Engineering & Automation',
-      description: 'Building robust data pipelines and automating workflows for scalable solutions',
-      skills: [
-        'ETL Development & Optimization',
-        'Workflow Automation (Airflow, Luigi)',
-        'Azure ML & Databricks',
-        'PySpark & Big Data Processing',
-        'API Integration & Development',
-        'Cloud Infrastructure (Azure)',
-      ],
-    },
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
-    <section ref={ref} className="section-padding bg-[var(--card-bg)]">
+    <section className="page-section" id="expertise">
       <div className="container-custom">
-        <motion.div
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          variants={containerVariants}
-        >
-          <motion.div variants={cardVariants} className="text-center mb-12">
-            <h2 className="mb-4">Core Expertise</h2>
-            <p className="text-[var(--secondary)] text-lg">Professional skills and technical capabilities</p>
-          </motion.div>
+        <div className="section-intro centered">
+          <span className="eyebrow">Expertise</span>
+          <h2 className="section-title">Deep domain knowledge across the data science lifecycle</h2>
+          <p className="section-description">
+            I combine statistical rigour with systems thinking—shipping models, automation, and enablement programmes that
+            stay maintainable long after the first release.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {expertiseAreas.map((area, index) => (
-              <motion.div
-                key={index}
-                variants={cardVariants}
-                className="card group cursor-default"
-              >
-                <h3 className="mb-3 text-[var(--primary)]">{area.title}</h3>
-                <p className="text-sm text-[var(--secondary)] mb-4">{area.description}</p>
-                <ul className="space-y-2">
-                  {area.skills.map((skill, skillIndex) => (
-                    <li key={skillIndex} className="flex items-start text-sm text-[var(--secondary)]">
-                      <svg
-                        className="w-5 h-5 mr-2 text-[var(--primary)] flex-shrink-0 mt-0.5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span>{skill}</span>
-                    </li>
+        <div className="card-grid columns-3">
+          {focusAreas.map((area) => (
+            <article key={area.title} className="content-card">
+              <h3>{area.title}</h3>
+              <p>{area.summary}</p>
+              <ul className="list-styled">
+                {area.bullets.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div className="page-section" style={{ paddingTop: '4rem', paddingBottom: '0' }}>
+          <div className="card-grid columns-3">
+            {toolkits.map((group) => (
+              <div key={group.label} className="tools-card">
+                <h4>{group.label}</h4>
+                <ul>
+                  {group.stack.map((item) => (
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
+
+        <div className="page-section" style={{ paddingTop: '4rem', paddingBottom: '0' }}>
+          <div className="content-card highlighted">
+            <h3>Certifications</h3>
+            <div className="pill-list">
+              {certifications.map((cert) => (
+                <span key={cert} className="pill">
+                  {cert}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
