@@ -1,6 +1,6 @@
-import type { FC } from 'react';
+'use client';
 
-import Image from 'next/image';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 /**
@@ -24,7 +24,7 @@ export default function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.21, 1, 0.22, 1] },
+      transition: { duration: 0.6, ease: [0.21, 1, 0.22, 1] as const },
     },
   };
 
@@ -61,8 +61,6 @@ export default function Hero() {
     { category: 'ML Systems', items: ['LLMs', 'MLOps', 'Model Monitoring'] },
     { category: 'Data Engineering', items: ['PySpark', 'Airflow', 'ETL Automation'] },
   ];
-
-export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[var(--background)]">
       <div className="hero-blob top-[-6rem] left-[-4rem]" />
@@ -70,35 +68,35 @@ export default function Hero() {
 
       <div className="container-custom section-padding relative z-10">
         <motion.div
-          className="grid gap-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-center"
+          className="grid gap-20 lg:gap-24 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Primary Content */}
-          <motion.div variants={itemVariants} className="space-y-10">
+          <motion.div variants={itemVariants} className="space-y-12">
             <motion.div variants={itemVariants} className="inline-flex">
               <div className="gradient-ring">
                 <span>Data Science Specialist · Align Technology</span>
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="space-y-6">
+            <motion.div variants={itemVariants} className="space-y-8">
               <h1>
                 Shamkhal Hajiyev
-                <span className="block text-[clamp(1.4rem,3vw,1.9rem)] font-medium text-[var(--secondary)]">
+                <span className="block text-[clamp(1.4rem,3vw,1.9rem)] font-medium text-[var(--secondary)] mt-4">
                   Elevating decision intelligence with production-ready machine learning
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl leading-relaxed max-w-2xl">
+              <p className="text-lg md:text-xl leading-relaxed max-w-2xl mt-6">
                 I architect analytical ecosystems that help global teams predict demand, retain customers, and unlock new
                 revenue opportunities. My work bridges statistical rigour, human-centred storytelling, and resilient
                 engineering.
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-5">
               <Link href="/projects" className="btn btn-primary">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -120,7 +118,7 @@ export default function Hero() {
 
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-5"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-6"
             >
               {stats.map((stat) => (
                 <div key={stat.label} className="stat-card">
@@ -132,16 +130,16 @@ export default function Hero() {
           </motion.div>
 
           {/* Secondary Content */}
-          <motion.div variants={itemVariants} className="space-y-6">
+          <motion.div variants={itemVariants} className="space-y-8">
             <motion.div
               variants={itemVariants}
-              className="floating-card space-y-5"
+              className="floating-card space-y-6"
               transition={{ delay: 0.2 }}
             >
               <h3 className="text-xl">Trusted for strategic delivery</h3>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 {highlights.map((highlight) => (
-                  <div key={highlight.title} className="flex items-start gap-3">
+                  <div key={highlight.title} className="flex items-start gap-4">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--muted)] text-lg">
                       {highlight.icon}
                     </div>
@@ -183,13 +181,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      <div className="hero-photo">
-        <Image src="/profile.svg" alt="Portrait of Shamkhal Hajiyev" width={640} height={820} priority />
-        <div className="caption">Align Technology · Strategic analytics leader</div>
-      </div>
-    </div>
-  </section>
-);
-
-export default Hero;
+    </section>
+  );
+}

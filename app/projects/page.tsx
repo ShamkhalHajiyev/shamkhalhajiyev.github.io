@@ -123,15 +123,10 @@ export default function ProjectsPage() {
               </div>
             </article>
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-16"
-        >
+        <div className="mt-16">
           <div className="text-center p-12 rounded-2xl bg-gradient-to-br from-[var(--primary)]/5 to-[var(--accent)]/5 border border-[var(--border)]">
             <h3 className="text-2xl font-bold mb-3 text-[var(--foreground)]">
               Let&apos;s Build Something Amazing
@@ -146,8 +141,7 @@ export default function ProjectsPage() {
               Get in Touch
             </a>
           </div>
-        </motion.div>
-
+        </div>
       </div>
     </main>
   );
