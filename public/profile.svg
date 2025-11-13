@@ -1,0 +1,18 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="120" y1="80" x2="680" y2="720" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F52FF" />
+      <stop offset="1" stop-color="#15AABF" />
+    </linearGradient>
+    <linearGradient id="halo" x1="120" y1="120" x2="680" y2="680" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#D9E1FF" stop-opacity="0.4" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" rx="220" fill="#0E1320" />
+  <circle cx="400" cy="400" r="320" fill="url(#grad)" />
+  <circle cx="400" cy="340" r="220" fill="url(#halo)" />
+  <path d="M400 214C335 214 282 267 282 332C282 397 335 450 400 450C465 450 518 397 518 332C518 267 465 214 400 214Z" fill="#F4F5FB" />
+  <path d="M400 470C286 470 190 566 190 680V704C190 722 205 736 223 736H577C595 736 610 722 610 704V680C610 566 514 470 400 470Z" fill="#F4F5FB" />
+  <text x="50%" y="55%" text-anchor="middle" fill="#2F52FF" font-family="'General Sans', 'Inter', sans-serif" font-size="140" font-weight="700" letter-spacing="0.05em">SH</text>
+</svg>
