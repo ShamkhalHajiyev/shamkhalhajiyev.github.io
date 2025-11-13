@@ -18,7 +18,7 @@ export default function About() {
       y: 0,
       transition: {
         duration: 0.7,
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.16, 1, 0.3, 1] as const,
         staggerChildren: 0.2,
       },
     },
@@ -29,7 +29,7 @@ export default function About() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
     },
   };
 
@@ -64,13 +64,13 @@ export default function About() {
     <section ref={ref} className="relative bg-[var(--card-bg)]/30 section-padding">
       <div className="container-custom">
         <motion.div
-          className="grid gap-12 xl:gap-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-start"
+          className="grid gap-16 xl:gap-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-start"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
         >
-          <motion.div variants={itemVariants} className="space-y-8">
-            <div className="space-y-4">
+          <motion.div variants={itemVariants} className="space-y-10">
+            <div className="space-y-6">
               <span className="section-eyebrow">About</span>
               <h2>Human-centred data science with enterprise craft</h2>
               <p className="text-lg leading-relaxed text-[var(--secondary)]">
@@ -80,10 +80,10 @@ export default function About() {
             </div>
 
             <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)]/60 p-6 md:p-8">
-              <h3 className="text-xl mb-4">What this means in practice</h3>
-              <ul className="space-y-4 text-base leading-relaxed">
+              <h3 className="text-xl mb-5">What this means in practice</h3>
+              <ul className="space-y-5 text-base leading-relaxed">
                 {signatureApproach.map((item) => (
-                  <li key={item} className="flex gap-3">
+                  <li key={item} className="flex gap-4">
                     <svg
                       className="mt-1 h-5 w-5 flex-shrink-0 text-[var(--accent-secondary)]"
                       fill="none"
@@ -99,7 +99,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="space-y-6">
+          <motion.div variants={itemVariants} className="space-y-8">
             {expertiseHighlights.map((highlight, index) => (
               <motion.div
                 key={highlight.title}

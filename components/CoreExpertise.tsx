@@ -26,7 +26,7 @@ export default function CoreExpertise() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.55, ease: [0.18, 0.89, 0.32, 1.28] },
+      transition: { duration: 0.55, ease: [0.18, 0.89, 0.32, 1.28] as const },
     },
   };
 
@@ -67,9 +67,9 @@ export default function CoreExpertise() {
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           variants={containerVariants}
-          className="space-y-12"
+          className="space-y-16"
         >
-          <motion.div variants={cardVariants} className="text-center space-y-4 max-w-3xl mx-auto">
+          <motion.div variants={cardVariants} className="text-center space-y-6 max-w-3xl mx-auto">
             <span className="section-eyebrow">Core Expertise</span>
             <h2>Where strategy, science, and engineering intersect</h2>
             <p className="text-lg text-[var(--secondary)]">
@@ -77,15 +77,15 @@ export default function CoreExpertise() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {expertiseAreas.map((area, index) => (
               <motion.div
                 key={area.title}
                 variants={cardVariants}
                 transition={{ delay: 0.08 * index }}
-                className="card flex flex-col gap-6 h-full"
+                className="card flex flex-col gap-7 h-full"
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--muted)] text-2xl">
                     {area.icon}
                   </div>
@@ -126,20 +126,7 @@ export default function CoreExpertise() {
               </motion.div>
             ))}
           </div>
-        </div>
-
-        <div className="page-section" style={{ paddingTop: '4rem', paddingBottom: '0' }}>
-          <div className="content-card highlighted">
-            <h3>Certifications</h3>
-            <div className="pill-list">
-              {certifications.map((cert) => (
-                <span key={cert} className="pill">
-                  {cert}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

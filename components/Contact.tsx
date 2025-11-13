@@ -136,7 +136,7 @@ export default function Contact() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.21, 1, 0.22, 1],
+        ease: [0.21, 1, 0.22, 1] as const,
         staggerChildren: 0.15,
       },
     },
@@ -147,20 +147,20 @@ export default function Contact() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: [0.21, 1, 0.22, 1] },
+      transition: { duration: 0.5, ease: [0.21, 1, 0.22, 1] as const },
     },
   };
 
   return (
-    <section className="page-section" id="contact">
+    <section ref={ref} className="page-section" id="contact">
       <div className="container-custom">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="space-y-12"
+          className="space-y-16"
         >
-          <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto space-y-4">
+          <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto space-y-6">
             <span className="section-eyebrow">Collaborate</span>
             <h2>Let&apos;s design your next data advantage</h2>
             <p className="text-lg text-[var(--secondary)]">
@@ -168,16 +168,16 @@ export default function Contact() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-10 xl:gap-14">
-            <motion.div variants={itemVariants} className="space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-12 xl:gap-16">
+            <motion.div variants={itemVariants} className="space-y-8">
               <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 p-8 text-white shadow-2xl">
                 <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.7),_transparent_55%)]" />
-                <div className="relative space-y-5">
+                <div className="relative space-y-6">
                   <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white/70">What to expect</p>
                   <h3 className="text-3xl font-semibold leading-tight">Clarity, craft, and measurable outcomes</h3>
-                  <ul className="space-y-3 text-sm text-white/80">
+                  <ul className="space-y-4 text-sm text-white/80">
                     {promisePoints.map((point) => (
-                      <li key={point} className="flex gap-3">
+                      <li key={point} className="flex gap-4">
                         <span className="mt-1 text-lg">✦</span>
                         <span>{point}</span>
                       </li>
@@ -196,7 +196,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="floating-card flex items-start gap-4">
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--muted)] text-[var(--primary)]">
@@ -302,7 +302,7 @@ export default function Contact() {
               </form>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
