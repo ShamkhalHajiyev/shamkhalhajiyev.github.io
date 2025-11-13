@@ -126,7 +126,20 @@ export default function CoreExpertise() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
+
+        <div className="page-section" style={{ paddingTop: '4rem', paddingBottom: '0' }}>
+          <div className="content-card highlighted">
+            <h3>Certifications</h3>
+            <div className="pill-list">
+              {certifications.map((cert) => (
+                <span key={cert} className="pill">
+                  {cert}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

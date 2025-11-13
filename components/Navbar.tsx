@@ -1,14 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
 
-/**
- * Navbar component with sticky positioning and dark/light mode toggle
- * Features responsive mobile menu and smooth backdrop blur effect
- */
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -20,6 +16,11 @@ export default function Navbar() {
     return () => cancelAnimationFrame(frame);
   }, []);
 
+  const resolvedTheme = useMemo(() => {
+    if (!mounted) return 'light';
+    return theme;
+  }, [theme, mounted]);
+
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'CV', href: '/cv' },
@@ -27,174 +28,181 @@ export default function Navbar() {
     { name: 'Contact', href: '/#contact' },
   ];
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   const isActive = (href: string) => {
     if (href === '/') return pathname === href;
-    return pathname.startsWith(href);
+    return pathname.startsWith(href.replace('/#', '/'));
   };
 
+  const surfaceStyles = {
+    background: resolvedTheme === 'dark' ? 'rgba(13, 17, 28, 0.92)' : 'rgba(255, 255, 255, 0.88)',
+    border: '1px solid var(--border-soft)',
+    boxShadow: 'var(--shadow-soft)',
+  } as const;
+
+  const subtleSurface = {
+    background: resolvedTheme === 'dark' ? 'rgba(255, 255, 255, 0.04)' : 'rgba(14, 19, 32, 0.04)',
+    border: '1px solid rgba(14, 19, 32, 0.08)',
+  } as const;
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 navbar-blur border-b border-[var(--border)]">
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo / Monogram */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] flex items-center justify-center font-bold text-white text-lg shadow-lg group-hover:shadow-xl transition-all group-hover:scale-105">
+    <nav className="fixed inset-x-0 top-0 z-50" style={{ backdropFilter: 'blur(14px)' }}>
+      <div className="container-custom" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '0.6rem 1rem',
+            borderRadius: '999px',
+            ...surfaceStyles,
+          }}
+        >
+          <Link href="/" className="flex items-center gap-3">
+            <div
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '14px',
+                background: 'linear-gradient(135deg, #2f52ff 0%, #15aabf 100%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+                fontWeight: 700,
+                letterSpacing: '0.05em',
+              }}
+            >
               SH
             </div>
-            <span className="text-xl font-bold text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors hidden sm:block">
+            <span className="hidden sm:block" style={{ fontWeight: 600, color: 'var(--text-strong)', letterSpacing: '-0.02em' }}>
               Shamkhal Hajiyev
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative text-sm font-medium transition-all ${
-                  isActive(item.href)
-                    ? 'text-[var(--primary)] font-semibold'
-                    : 'text-[var(--secondary)] hover:text-[var(--foreground)]'
-                }`}
+                className="text-sm font-medium"
+                style={{
+                  color: isActive(item.href) ? 'var(--primary)' : 'var(--text-muted)',
+                  position: 'relative',
+                }}
               >
                 {item.name}
                 {isActive(item.href) && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] rounded-full"></span>
+                  <span
+                    style={{
+                      position: 'absolute',
+                      left: 0,
+                      right: 0,
+                      bottom: '-0.45rem',
+                      height: '3px',
+                      borderRadius: '999px',
+                      background: 'linear-gradient(135deg, #2f52ff 0%, #15aabf 100%)',
+                    }}
+                  />
                 )}
               </Link>
             ))}
 
-            {/* Theme Toggle */}
             {mounted && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-lg hover:bg-[var(--border)] transition-colors"
+                style={{
+                  padding: '0.55rem',
+                  borderRadius: '12px',
+                  ...subtleSurface,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? (
-                  <svg
-                    className="w-5 h-5 text-[var(--foreground)]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                    />
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
                   </svg>
                 ) : (
-                  <svg
-                    className="w-5 h-5 text-[var(--foreground)]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                    />
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                    <path d="M21 12.79A9 9 0 1111.21 3 6.5 6.5 0 0021 12.79z" />
                   </svg>
                 )}
               </button>
             )}
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-4 md:hidden">
-            {/* Theme Toggle Mobile */}
-            {mounted && (
-              <button
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-lg hover:bg-[var(--border)] transition-colors"
-                aria-label="Toggle theme"
-              >
-                {theme === 'dark' ? (
-                  <svg
-                    className="w-5 h-5 text-[var(--foreground)]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="w-5 h-5 text-[var(--foreground)]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                    />
-                  </svg>
-                )}
-              </button>
+          <button
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="md:hidden"
+            style={{
+              padding: '0.55rem',
+              borderRadius: '12px',
+              ...subtleSurface,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            aria-label="Toggle navigation"
+          >
+            {isOpen ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
             )}
-
-            <button
-              onClick={toggleMenu}
-              className="p-2 rounded-lg hover:bg-[var(--border)] transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <svg
-                  className="w-6 h-6 text-[var(--foreground)]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg
-                  className="w-6 h-6 text-[var(--foreground)]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
+          </button>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-[var(--border)]">
-            <div className="flex flex-col space-y-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`relative inline-block text-sm font-medium transition-all px-4 py-2 rounded-lg ${
-                    isActive(item.href)
-                      ? 'text-[var(--primary)] font-semibold bg-[var(--primary)]/10'
-                      : 'text-[var(--secondary)] hover:text-[var(--foreground)] hover:bg-[var(--muted)]'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+          <div
+            className="md:hidden"
+            style={{
+              marginTop: '0.75rem',
+              padding: '1rem',
+              borderRadius: '24px',
+              ...surfaceStyles,
+              display: 'grid',
+              gap: '0.75rem',
+            }}
+          >
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                style={{
+                  padding: '0.75rem 0.9rem',
+                  borderRadius: '16px',
+                  background: isActive(item.href) ? 'rgba(47, 82, 255, 0.12)' : subtleSurface.background,
+                  border: subtleSurface.border,
+                  color: isActive(item.href) ? 'var(--primary)' : 'var(--text-muted)',
+                  fontWeight: 600,
+                  fontSize: '0.95rem',
+                }}
+              >
+                {item.name}
+              </Link>
+            ))}
+
+            {mounted && (
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                style={{
+                  padding: '0.75rem 0.9rem',
+                  borderRadius: '16px',
+                  ...subtleSurface,
+                  fontWeight: 600,
+                }}
+              >
+                Toggle theme
+              </button>
+            )}
           </div>
         )}
       </div>

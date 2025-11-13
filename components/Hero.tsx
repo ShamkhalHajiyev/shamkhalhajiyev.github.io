@@ -1,7 +1,7 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
 /**
  * Hero section - Redesigned for a premium, editorial feel
@@ -62,6 +62,7 @@ export default function Hero() {
     { category: 'Data Engineering', items: ['PySpark', 'Airflow', 'ETL Automation'] },
   ];
 
+export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[var(--background)]">
       <div className="hero-blob top-[-6rem] left-[-4rem]" />

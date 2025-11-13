@@ -152,7 +152,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" ref={ref} className="section-padding bg-[var(--background)]">
+    <section className="page-section" id="contact">
       <div className="container-custom">
         <motion.div
           variants={containerVariants}
@@ -302,7 +302,7 @@ export default function Contact() {
               </form>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
