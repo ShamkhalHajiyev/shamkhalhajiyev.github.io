@@ -1,4 +1,4 @@
-'use client';
+import type { FC } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -183,6 +183,13 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
-    </section>
-  );
-}
+
+      <div className="hero-photo">
+        <Image src="/profile.svg" alt="Portrait of Shamkhal Hajiyev" width={640} height={820} priority />
+        <div className="caption">Align Technology · Strategic analytics leader</div>
+      </div>
+    </div>
+  </section>
+);
+
+export default Hero;
