@@ -5,14 +5,31 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Shamkhal Hajiyev — Data Science Specialist',
-  description: 'Portfolio of Shamkhal Hajiyev, Data Science Specialist at Align Technology. Expert in machine learning, forecasting, and advanced analytics.',
-  keywords: ['Shamkhal Hajiyev', 'Data Scientist', 'Machine Learning Engineer', 'Azure ML', 'Databricks', 'PySpark'],
-  authors: [{ name: 'Shamkhal Hajiyev' }],
+  title: {
+    default: 'Shamkhal Hajiyev — Data Science & ML Engineering',
+    template: '%s | Shamkhal Hajiyev',
+  },
+  description: 'Data Scientist & ML Engineer specializing in production ML systems, forecasting, and analytics automation. 4+ years building scalable solutions with Azure ML, Python, and enterprise-grade MLOps.',
+  keywords: ['Shamkhal Hajiyev', 'Data Scientist', 'Machine Learning Engineer', 'Azure ML', 'Databricks', 'PySpark', 'MLOps', 'Forecasting', 'Churn Prediction', 'Poland'],
+  authors: [{ name: 'Shamkhal Hajiyev', url: 'https://shamkhalhajiyev.github.io' }],
+  creator: 'Shamkhal Hajiyev',
+  metadataBase: new URL('https://shamkhalhajiyev.github.io'),
   openGraph: {
-    title: 'Shamkhal Hajiyev — Data Science Specialist',
-    description: 'Expert in machine learning, forecasting, and advanced analytics.',
+    title: 'Shamkhal Hajiyev — Data Science & ML Engineering',
+    description: 'Elevating decision intelligence with production-ready machine learning. Expert in forecasting, churn prediction, and enterprise analytics.',
+    url: 'https://shamkhalhajiyev.github.io',
+    siteName: 'Shamkhal Hajiyev Portfolio',
+    locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shamkhal Hajiyev — Data Science & ML Engineering',
+    description: 'Elevating decision intelligence with production-ready machine learning.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

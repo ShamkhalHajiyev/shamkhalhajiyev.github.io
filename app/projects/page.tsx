@@ -1,132 +1,92 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { projects, projectFilters } from '@/data/projects';
+import ProjectCard from '@/components/ProjectCard';
 
-const filters = [
-  { id: 'all', label: 'All work' },
-  { id: 'ml', label: 'Machine learning' },
-  { id: 'data-engineering', label: 'Data engineering' },
-  { id: 'analytics', label: 'Analytics' },
-];
-
-const projects = [
-  {
-    title: 'Sales forecasting platform',
-    focus: 'Predictive analytics pipeline',
-    description:
-      'Built Azure ML forecasting workflows (LSTM, ARIMA) with Power BI delivery to reduce planning cycles by 95% while sustaining 90%+ accuracy.',
-    categories: ['ml', 'analytics'],
-    metrics: [
-      { label: 'Forecast accuracy', value: '90%+' },
-      { label: 'Planning time saved', value: '95%' },
-      { label: 'Users supported', value: '50+' },
-    ],
-    tools: ['Python', 'Azure ML', 'Databricks', 'Power BI'],
-  },
-  {
-    title: 'Churn prediction engine',
-    focus: 'Customer retention system',
-    description:
-      'Deployed interpretable ensemble scoring with SHAP storytelling to uplift retention by 15% and protect $2.3M in annual revenue.',
-    categories: ['ml', 'analytics'],
-    metrics: [
-      { label: 'Model accuracy', value: '95%' },
-      { label: 'Revenue protected', value: '$2.3M' },
-      { label: 'Retention uplift', value: '+15%' },
-    ],
-    tools: ['XGBoost', 'CatBoost', 'Azure ML', 'Power BI'],
-  },
-  {
-    title: 'Analytics control tower',
-    focus: 'Program performance intelligence',
-    description:
-      'Engineered Polars-powered ingestion and KPI automation with 99.9% uptime to benchmark 19+ metrics across global programs.',
-    categories: ['data-engineering', 'analytics'],
-    metrics: [
-      { label: 'Pipeline uptime', value: '99.9%' },
-      { label: 'Processing gain', value: '+40%' },
-      { label: 'Data capacity', value: '10×' },
-    ],
-    tools: ['Polars', 'Python', 'REST APIs', 'Power BI'],
-  },
-  {
-    title: 'Logistics optimisation suite',
-    focus: 'Supply chain analytics',
-    description:
-      'Created pricing elasticity, route optimisation, and anomaly detection models to enhance margins and SLA reliability for international logistics.',
-    categories: ['analytics', 'ml'],
-    metrics: [
-      { label: 'Lead engagement', value: '2×' },
-      { label: 'SLA risk alerts', value: 'Real-time' },
-      { label: 'Stakeholders trained', value: '30+' },
-    ],
-    tools: ['Python', 'Tableau', 'Airflow', 'SQL'],
-  },
-];
-
+/**
+ * Projects page - Filterable project showcase
+ * Uses centralized project data with category filtering
+ */
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState('all');
 
-  const filteredProjects =
-    activeFilter === 'all' ? projects : projects.filter((project) => project.categories.includes(activeFilter));
+  const filteredProjects = activeFilter === 'all'
+    ? projects
+    : activeFilter === 'professional' || activeFilter === 'github'
+      ? projects.filter((p) => p.category === activeFilter)
+      : projects.filter((p) => p.domains.includes(activeFilter as 'ml' | 'data-engineering' | 'analytics'));
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
 
   return (
-    <main className="page-section" style={{ paddingTop: '6rem' }}>
-      <div className="container-custom" style={{ display: 'grid', gap: '3rem' }}>
-        <div className="section-intro centered">
-          <span className="eyebrow">Projects</span>
-          <h1 className="section-title">Selected professional impact</h1>
-          <p className="section-description">
-            A snapshot of the data products I have delivered—grounded in stakeholder partnership, measurable outcomes, and
-            rigorous MLOps practices.
+    <main className="min-h-screen bg-[var(--background)]">
+      <motion.div
+        className="container-custom section-padding"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Header */}
+        <motion.div variants={itemVariants} className="section-header">
+          <span className="section-eyebrow mb-4 inline-block">Projects</span>
+          <h1 className="section-title">Selected Professional Impact</h1>
+          <p className="section-subtitle max-w-2xl mx-auto">
+            A snapshot of the data products I have delivered—grounded in stakeholder partnership, measurable outcomes, and rigorous MLOps practices.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="btn-row" style={{ justifyContent: 'center' }}>
-          {filters.map((filter) => (
+        {/* Filters */}
+        <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3 mb-12">
+          {projectFilters.map((filter) => (
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={activeFilter === filter.id ? 'button-primary' : 'button-secondary'}
+              className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
             >
               {filter.label}
             </button>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="card-grid columns-2">
-          {filteredProjects.map((project) => (
-            <article key={project.title} className="content-card">
-              <span className="eyebrow" style={{ fontSize: '0.75rem' }}>
-                {project.focus}
-              </span>
-              <h2 style={{ fontSize: '1.8rem', marginTop: '0.5rem', marginBottom: '1rem' }}>{project.title}</h2>
-              <p>{project.description}</p>
-              <div className="stat-cluster">
-                {project.metrics.map((metric) => (
-                  <div key={metric.label} className="stat-card">
-                    <div className="stat-value" style={{ fontSize: '1.4rem' }}>
-                      {metric.value}
-                    </div>
-                    <div className="stat-label" style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                      {metric.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="pill-list" style={{ marginTop: '1.5rem' }}>
-                {project.tools.map((tool) => (
-                  <span key={tool} className="pill">
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </article>
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              focus={project.focus}
+              description={project.description}
+              metrics={project.metrics}
+              technologies={project.technologies}
+              githubUrl={project.githubUrl}
+              featured={project.featured}
+              index={index}
+            />
           ))}
         </div>
 
+        {/* Empty State */}
+        {filteredProjects.length === 0 && (
+          <motion.div variants={itemVariants} className="text-center py-12">
+            <p className="text-[var(--secondary)]">No projects found for this filter.</p>
+          </motion.div>
+        )}
+
         {/* CTA Section */}
-        <div className="mt-16">
+        <motion.div variants={itemVariants} className="mt-16">
           <div className="text-center p-12 rounded-2xl bg-gradient-to-br from-[var(--primary)]/5 to-[var(--accent)]/5 border border-[var(--border)]">
             <h3 className="text-2xl font-bold mb-3 text-[var(--foreground)]">
               Let&apos;s Build Something Amazing
@@ -141,8 +101,8 @@ export default function ProjectsPage() {
               Get in Touch
             </a>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </main>
   );
 }

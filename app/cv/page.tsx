@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import PDFDownloadButton from '@/components/PDFDownloadButton';
 
 /**
  * CV Page - Comprehensive curriculum vitae
@@ -36,10 +37,15 @@ export default function CVPage() {
       >
         {/* Header */}
         <motion.div variants={itemVariants} className="mb-12">
-          <h1 className="mb-3">Shamkhal Hajiyev</h1>
-          <h2 className="text-xl md:text-2xl text-[var(--secondary)] mb-6">
-            Data Scientist | Machine Learning Engineer
-          </h2>
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-6">
+            <div>
+              <h1 className="mb-3">Shamkhal Hajiyev</h1>
+              <h2 className="text-xl md:text-2xl text-[var(--secondary)]">
+                Data Scientist | Machine Learning Engineer
+              </h2>
+            </div>
+            <PDFDownloadButton />
+          </div>
           <div className="flex flex-wrap gap-4 text-sm text-[var(--secondary)]">
             <div className="flex items-center">
               <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
