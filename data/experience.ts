@@ -27,7 +27,7 @@ export const experiences: Experience[] = [
         company: 'Align Technology',
         location: 'Wrocław, Poland',
         startDate: 'Jan 2023',
-        endDate: null,
+        endDate: 'Nov 2025',
         description: 'Leading data science initiatives and developing advanced ML solutions for business optimization.',
         achievements: [
             {

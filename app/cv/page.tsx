@@ -159,7 +159,7 @@ export default function CVPage() {
             Professional Experience
           </h2>
 
-          {/* Current Role */}
+          {/* Align Technology */}
           <div className="card mb-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
               <div>
@@ -167,7 +167,7 @@ export default function CVPage() {
                 <p className="text-[var(--primary)] font-medium">Align Technology</p>
               </div>
               <div className="text-sm text-[var(--secondary)] mt-2 md:mt-0">
-                <p>Jan 2023 - Present</p>
+                <p>Jan 2023 - Nov 2025</p>
                 <p>Wrocław, Poland</p>
               </div>
             </div>

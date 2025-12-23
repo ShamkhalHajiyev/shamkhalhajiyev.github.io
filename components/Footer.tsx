@@ -59,7 +59,7 @@ export default function Footer() {
           <div className="content-card" style={{ padding: '2rem' }}>
             <h3 style={{ marginBottom: '0.75rem' }}>Shamkhal Hajiyev</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-              Data Science Specialist focused on ML strategy, forecasting, and analytics automation for high-growth teams.
+              Data Scientist & ML Engineer focused on ML strategy, forecasting, and analytics automation for high-growth teams.
             </p>
           </div>
 

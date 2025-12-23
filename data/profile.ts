@@ -6,8 +6,7 @@
 export const profile = {
     name: 'Shamkhal Hajiyev',
     title: 'Data Scientist | Machine Learning Engineer',
-    currentRole: 'Data Science Specialist',
-    currentCompany: 'Align Technology',
+    currentRole: 'Data Scientist & ML Engineer',
 
     tagline: 'Elevating decision intelligence with production-ready machine learning',
 

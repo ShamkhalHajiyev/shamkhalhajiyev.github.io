@@ -77,7 +77,7 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="space-y-12">
             <motion.div variants={itemVariants} className="inline-flex">
               <div className="gradient-ring">
-                <span>Data Science Specialist · Align Technology</span>
+                <span>Data Scientist & ML Engineer</span>
               </div>
             </motion.div>
 
