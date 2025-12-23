@@ -8,15 +8,15 @@ export const profile = {
     title: 'Data Scientist | Machine Learning Engineer',
     currentRole: 'Data Scientist & ML Engineer',
 
-    tagline: 'Elevating decision intelligence with production-ready machine learning',
+    tagline: 'I build production ML systems that predict demand, reduce churn, and drive measurable business impact.',
 
-    bio: `I architect analytical ecosystems that help global teams predict demand, retain customers, and unlock new revenue opportunities. My work bridges statistical rigour, human-centred storytelling, and resilient engineering.`,
+    bio: `Data Scientist & ML Engineer with 4+ years of experience. I help companies like Align Technology optimize operations through predictive analytics, delivering $4M+ in business value.`,
 
-    extendedBio: `Results-oriented Data Scientist & Machine Learning Engineer with 4+ years of experience in delivering end-to-end data science solutions across predictive modeling, time series forecasting, and advanced analytics. Skilled in Python, SQL, and cloud-based platforms (Azure ML, Databricks, PySpark), with a strong background in Statistics and Machine Learning.
+    extendedBio: `I am a Data Scientist & Machine Learning Engineer focused on building scalable, production-grade AI systems that solve real business problems. With over 4 years of experience, I have successfully delivered end-to-end ML solutions—from initial discovery and prototyping to deployment and monitoring in Azure ML and Databricks.
 
-Proven expertise in designing and deploying scalable ML pipelines, automating ETL workflows with Airflow, and integrating models into real-time business applications. Adept at combining data engineering, model development, and interpretability techniques (e.g., SHAP) to generate actionable insights that support strategic decision-making.
+My technical expertise spans Python, SQL, and distributed computing (PySpark), with deep knowledge in predictive modeling, time series forecasting, and causal inference. I don't just build models; I build resilient analytical ecosystems that integrate seamlessly with business operations to drive decision-making.
 
-Collaborative and agile professional with experience in cross-functional teamwork, stakeholder communication, and mentoring, passionate about applying data science to solve complex problems and drive innovation in dynamic business environments.`,
+Key achievements include developing sales forecasting models with 90% accuracy, building churn prediction systems that protected $2.3M in revenue, and modernizing ETL pipelines for 10x faster data processing. I thrive in cross-functional environments where I can combine statistical rigour with clear communication to bridge the gap between data and business strategy.`,
 
     location: 'Wrocław, Poland',
     timezone: 'CET',

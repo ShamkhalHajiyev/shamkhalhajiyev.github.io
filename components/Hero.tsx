@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { profile } from '@/data/profile';
 
 /**
  * Hero section - Redesigned for a premium, editorial feel
@@ -81,18 +82,16 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="space-y-8">
+            <motion.div variants={itemVariants} className="space-y-6">
               <h1>
                 Shamkhal Hajiyev
-                <span className="block text-[clamp(1.4rem,3vw,1.9rem)] font-medium text-[var(--secondary)] mt-4">
-                  Elevating decision intelligence with production-ready machine learning
+                <span className="block text-[clamp(1.25rem,2.5vw,1.75rem)] font-medium text-[var(--secondary)] mt-4 leading-normal">
+                  {profile.tagline}
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl leading-relaxed max-w-2xl mt-6">
-                I architect analytical ecosystems that help global teams predict demand, retain customers, and unlock new
-                revenue opportunities. My work bridges statistical rigour, human-centred storytelling, and resilient
-                engineering.
+              <p className="text-lg text-[var(--foreground-soft)] leading-relaxed max-w-2xl">
+                {profile.bio}
               </p>
             </motion.div>
 
